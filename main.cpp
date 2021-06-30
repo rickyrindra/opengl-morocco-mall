@@ -108,6 +108,27 @@ void tampil(void){
         glVertex3f(-130, 70, -60);
         glVertex3f(-170, 70, -60);
     glEnd();
+    
+    // dinding pele
+    glColor3f(0.8,0.8,0.8);
+    glBegin(GL_QUADS);
+        glVertex3f(-280, -50, 40);
+        glVertex3f(-200, -50, 55);
+        glVertex3f(-200, 70, 55);
+        glVertex3f(-280, 70, 40);
+    glEnd();
+    glBegin(GL_QUADS);
+        glVertex3f(-180, -50, 55);
+        glVertex3f(-50, -50, 55);
+        glVertex3f(-50, 70, 55);
+        glVertex3f(-180, 70, 55);
+    glEnd();
+    glBegin(GL_QUADS);
+        glVertex3f(-280, -50, 40);
+        glVertex3f(-280, -50, -60);
+        glVertex3f(-280, 70, -60);
+        glVertex3f(-280, 70, 40);
+    glEnd();
 
     glPopMatrix();
     glutSwapBuffers();
