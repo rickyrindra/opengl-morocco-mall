@@ -69,12 +69,64 @@ void tampil(void){
     glRotatef(xrot, 1.0f, 0.0f, 0.0f);
     glRotatef(yrot, 0.0f, 1.0f, 0.0f);
 
+    //pondasi
     glColor3f(1,1,1);
     glBegin(GL_QUADS);
         glVertex3f(-350, -50, -140);
         glVertex3f(350, -50, -140);
         glVertex3f(350, -50, 100);
         glVertex3f(-350, -50, 100);
+    glEnd();
+    
+    //dinding deva
+    glColor3f(0.8,0.8,0.8);
+    glBegin(GL_QUADS);
+        glVertex3f(120, -50, 50);
+        glVertex3f(220, -50, 25);
+        glVertex3f(220, 70, 25);
+        glVertex3f(120, 70, 50);
+    glEnd();
+    glColor3f(0.8,0.8,0.8);
+    glBegin(GL_QUADS);
+        glVertex3f(-30, -50, 55);
+        glVertex3f(120, -50, 50);
+        glVertex3f(120, 70, 50);
+        glVertex3f(-30, 70, 55);
+    glEnd();
+        glColor3f(0.8,0.8,0.8);
+    glBegin(GL_QUADS);
+        glVertex3f(-280, -50, -60);
+        glVertex3f(-190, -50, -60);
+        glVertex3f(-190, 70, -60);
+        glVertex3f(-280, 70, -60);
+    glEnd();
+    glColor3f(0.8,0.8,0.8);
+    glBegin(GL_QUADS);
+        glVertex3f(-170, -50, -60);
+        glVertex3f(-130, -50, -60);
+        glVertex3f(-130, 70, -60);
+        glVertex3f(-170, 70, -60);
+    glEnd();
+    
+    // dinding pele
+    glColor3f(0.8,0.8,0.8);
+    glBegin(GL_QUADS);
+        glVertex3f(-280, -50, 40);
+        glVertex3f(-200, -50, 55);
+        glVertex3f(-200, 70, 55);
+        glVertex3f(-280, 70, 40);
+    glEnd();
+    glBegin(GL_QUADS);
+        glVertex3f(-180, -50, 55);
+        glVertex3f(-50, -50, 55);
+        glVertex3f(-50, 70, 55);
+        glVertex3f(-180, 70, 55);
+    glEnd();
+    glBegin(GL_QUADS);
+        glVertex3f(-280, -50, 40);
+        glVertex3f(-280, -50, -60);
+        glVertex3f(-280, 70, -60);
+        glVertex3f(-280, 70, 40);
     glEnd();
 
 
