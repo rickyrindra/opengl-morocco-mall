@@ -61,7 +61,6 @@ void init(void){
     glMatrixMode(GL_MODELVIEW);
 }
 
-
 void tampil(void){
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -77,6 +76,43 @@ void tampil(void){
         glVertex3f(350, -50, 100);
         glVertex3f(-350, -50, 100);
     glEnd();
+
+
+    // atap
+    glColor3f(0.85,0.85,0.85);
+    glBegin(GL_POLYGON);
+        glVertex3d(220, 70, 25);
+        glVertex3d(120, 70, 50);
+        glVertex3d(-30, 70, 55);
+        glVertex3d(-50, 70, 55);
+        glVertex3d(-180, 70, 55);
+        glVertex3d(-200, 70, 55);
+        glVertex3d(-280, 70, 40);
+        glVertex3d(-280, 70, -60);
+        glVertex3d(-130, 70, -60);
+        glVertex3d(-50, 70, -50);
+        glVertex3d(120, 70, -50);
+        glVertex3d(220, 70, -30);
+    glEnd();
+
+    // lantai
+    glColor3f(0.85,0.85,0.85);
+    glBegin(GL_POLYGON);
+        glVertex3f(220, -49.8, 25);
+        glVertex3f(120, -49.8, 50);
+        glVertex3f(-30, -49.8, 55);
+        glVertex3f(-50, -49.8, 55);
+        glVertex3f(-180, -49.8, 55);
+        glVertex3f(-200, -49.8, 55);
+        glVertex3f(-280, -49.8, 40);
+        glVertex3f(-280, -49.8, -60);
+        glVertex3f(-130, -49.8, -60);
+        glVertex3f(-50, -49.8, -50);
+        glVertex3f(120, -49.8, -50);
+        glVertex3f(220, -49.8, -30);
+    glEnd();
+
+
 
     glPopMatrix();
     glutSwapBuffers();
