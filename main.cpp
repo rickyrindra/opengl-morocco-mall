@@ -77,7 +77,7 @@ void tampil(void){
         glVertex3f(350, -50, 100);
         glVertex3f(-350, -50, 100);
     glEnd();
-    
+
     //dinding deva
     glColor3f(0.8,0.8,0.8);
     glBegin(GL_QUADS);
@@ -107,7 +107,7 @@ void tampil(void){
         glVertex3f(-130, 70, -60);
         glVertex3f(-170, 70, -60);
     glEnd();
-    
+
     // dinding pele
     glColor3f(0.8,0.8,0.8);
     glBegin(GL_QUADS);
@@ -164,7 +164,38 @@ void tampil(void){
         glVertex3f(220, -49.8, -30);
     glEnd();
 
+    // trotoar
+    glColor3f(229/255.f, 148/255.f, 148/255.f);
+    glBegin(GL_POLYGON);
+        glVertex3f(-280,-49.9,-80);
+        glVertex3f(220,-49.9,-80);
+        glVertex3f(220,-49.9,75);
+        glVertex3f(-280,-49.9,75);
+    glEnd();
 
+    // rumput
+    glColor3f(15/255.f, 154/255.f, 3/255.f);
+    glBegin(GL_POLYGON);
+        glVertex3f(-280,-49.9,-140);
+        glVertex3f(220,-49.9,-140);
+        glVertex3f(220,-49.9,-80);
+        glVertex3f(-280,-49.9,-80);
+    glEnd();
+
+    // kolam
+    glColor3f(22/255.f, 111/255.f, 194/255.f);
+    glBegin(GL_POLYGON);
+        glVertex3f(-120, -49.8, -110);
+        glVertex3f(-75, -49.8, -125);
+        glVertex3f(-30, -49.8, -130);
+        glVertex3f(30, -49.8, -130);
+        glVertex3f(75, -49.8, -125);
+        glVertex3f(120, -49.8, -110);
+        glVertex3f(75, -49.8, -95);
+        glVertex3f(30, -49.8, -90);
+        glVertex3f(-30, -49.8, -90);
+        glVertex3f(-75, -49.8, -95);
+    glEnd();
 
     glPopMatrix();
     glutSwapBuffers();
