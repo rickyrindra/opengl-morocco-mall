@@ -196,6 +196,110 @@ void tampil(void){
         glVertex3f(-30, -49.8, -90);
         glVertex3f(-75, -49.8, -95);
     glEnd();
+    
+    //KACA KIRI KOLAM RENANG
+    for(int i= -50;i< -30;i+=4)
+    {
+        for(int j= -20;j<70;j+=10)
+        {
+            int x = i+4;
+            int y = j+10;
+            int z = -50;
+        glBegin(GL_QUADS);
+        glColor4f(255/255.f,251/255.f,231/255.f,0.5);
+            glVertex3f(i,y,z);
+            glVertex3f(x,y,z);
+            glVertex3f(x,j,z);
+            glVertex3f(i,j,z);
+        glEnd();
+
+        glBegin(GL_LINE_STRIP);
+        glColor4f(0/255.f,0/255.f,0/255.f,0.1);
+            glVertex3f(i,y,z);
+            glVertex3f(i,j,z);
+            glVertex3f(x,j,z);
+            glVertex3f(x,y,z);
+        glEnd();
+        }
+    }
+
+    //KACA KANAN KOLAM RENANG
+    for(int i= -190;i< -170;i+=4)
+    {
+        for(int j= -20;j<70;j+=10)
+        {
+            int x = i+4;
+            int y = j+10;
+            int z = -60;
+        glBegin(GL_QUADS);
+        glColor4f(255/255.f,251/255.f,231/255.f,0.5);
+            glVertex3f(i,y,z);
+            glVertex3f(x,y,z);
+            glVertex3f(x,j,z);
+            glVertex3f(i,j,z);
+        glEnd();
+
+        glBegin(GL_LINE_STRIP);
+        glColor4f(0/255.f,0/255.f,0/255.f,0.1);
+            glVertex3f(i,y,z);
+            glVertex3f(i,j,z);
+            glVertex3f(x,j,z);
+            glVertex3f(x,y,z);
+        glEnd();
+        }
+    }
+
+    //KACA KANAN
+    for(int i= -50;i< -30;i+=4)
+    {
+        for(int j= -20;j<70;j+=10)
+        {
+            int x = i+4;
+            int y = j+10;
+            int z = 55;
+        glBegin(GL_QUADS);
+        glColor4f(255/255.f,251/255.f,231/255.f,0.5);
+            glVertex3f(i,y,z);
+            glVertex3f(x,y,z);
+            glVertex3f(x,j,z);
+            glVertex3f(i,j,z);
+        glEnd();
+
+        glBegin(GL_LINE_STRIP);
+        glColor4f(0/255.f,0/255.f,0/255.f,0.1);
+            glVertex3f(i,y,z);
+            glVertex3f(i,j,z);
+            glVertex3f(x,j,z);
+            glVertex3f(x,y,z);
+        glEnd();
+        }
+    }
+
+    //KACA KIRI
+    for(int i= -200;i< -180;i+=4)
+    {
+        for(int j= -20;j<70;j+=10)
+        {
+            int x = i+4;
+            int y = j+10;
+            int z = 55;
+        glBegin(GL_QUADS);
+        glColor4f(255/255.f,251/255.f,231/255.f,0.5);
+            glVertex3f(i,y,z);
+            glVertex3f(x,y,z);
+            glVertex3f(x,j,z);
+            glVertex3f(i,j,z);
+        glEnd();
+
+        glBegin(GL_LINE_STRIP);
+        glColor4f(0/255.f,0/255.f,0/255.f,0.1);
+            glVertex3f(i,y,z);
+            glVertex3f(i,j,z);
+            glVertex3f(x,j,z);
+            glVertex3f(x,y,z);
+        glEnd();
+        }
+    }
 
     glPopMatrix();
     glutSwapBuffers();
