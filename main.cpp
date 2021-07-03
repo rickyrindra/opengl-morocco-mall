@@ -151,7 +151,7 @@ void tampil(void){
         glVertex3f(-130, 70, -60);
         glVertex3f(-50, 70, -50);
     glEnd();
-    
+
     // atap
     glColor3f(0.85,0.85,0.85);
     glBegin(GL_POLYGON);
@@ -218,7 +218,7 @@ void tampil(void){
         glVertex3f(-30, -49.8, -90);
         glVertex3f(-75, -49.8, -95);
     glEnd();
-    
+
     //KACA KIRI KOLAM RENANG
     for(int i= -50;i< -30;i+=4)
     {
@@ -322,13 +322,115 @@ void tampil(void){
         glEnd();
         }
     }
-    
+
     //matahari
     glPushMatrix();
         glColor3f(1,1,0);
         glTranslated(0,300,0);
         glutSolidSphere(15,20,20);
     glPopMatrix();
+
+    // Cafe
+    for(int i=0; i<3; i++){
+        glColor3f(0.9,0.9,0.9);
+        glBegin(GL_QUADS); // dinding
+            glVertex3f(-10+(i*40),-50,-50.1);
+            glVertex3f(20+(i*40),-50,-50.1);
+            glVertex3f(20+(i*40),-20,-50.1);
+            glVertex3f(-10+(i*40),-20,-50.1);
+        glEnd();
+        glColor3f(0.5,0.5,0.5);
+        glBegin(GL_QUADS); // kanopi
+            glVertex3f(-10+(i*40),-20,-50.1);
+            glVertex3f(20+(i*40),-20,-50.1);
+            glVertex3f(20+(i*40),-23,-70);
+            glVertex3f(-10+(i*40),-23,-70);
+        glEnd();
+        glBegin(GL_QUADS); // tiang kanopi
+            glVertex3f(-10+(i*40),-50,-70);
+            glVertex3f(-8+(i*40),-50,-70);
+            glVertex3f(-8+(i*40),-23,-70);
+            glVertex3f(-10+(i*40),-23,-70);
+        glEnd();
+        glBegin(GL_QUADS); // tiang kanopi
+            glVertex3f(18+(i*40),-50,-70);
+            glVertex3f(20+(i*40),-50,-70);
+            glVertex3f(20+(i*40),-23,-70);
+            glVertex3f(18+(i*40),-23,-70);
+        glEnd();
+        glColor3f(80/255.f, 80/255.f, 80/255.f);
+        glBegin(GL_QUADS); // pintu
+            glVertex3f(2+(i*40),-50,-50.2);
+            glVertex3f(8+(i*40),-50,-50.2);
+            glVertex3f(8+(i*40),-30,-50.2);
+            glVertex3f(2+(i*40),-30,-50.2);
+        glEnd();
+        glColor3f(215/255.f, 255/255.f, 253/255.f);
+        glBegin(GL_QUADS); // jendela 1
+            glVertex3f(-8+(i*40),-48,-50.2);
+            glVertex3f(1+(i*40),-48,-50.2);
+            glVertex3f(1+(i*40),-32,-50.2);
+            glVertex3f(-8+(i*40),-32,-50.2);
+        glEnd();
+        glBegin(GL_QUADS); // jendela 2
+            glVertex3f(9+(i*40),-48,-50.2);
+            glVertex3f(18+(i*40),-48,-50.2);
+            glVertex3f(18+(i*40),-32,-50.2);
+            glVertex3f(9+(i*40),-32,-50.2);
+        glEnd();
+        glColor3f(230/255.f, 230/255.f, 230/255.f);
+        glBegin(GL_QUADS); // papan iklan bawah
+            glVertex3f(-12+(i*40),-20,-55);
+            glVertex3f(22+(i*40),-20,-55);
+            glVertex3f(22+(i*40),-10,-55);
+            glVertex3f(-12+(i*40),-10,-55);
+        glEnd();
+        glBegin(GL_QUADS); // papan iklan bawah
+            glVertex3f(-12+(i*40),-10,-55);
+            glVertex3f(-12+(i*40),-10,-50);
+            glVertex3f(22+(i*40),-10,-50);
+            glVertex3f(22+(i*40),-10,-55);
+        glEnd();
+        glColor3f(220/255.f, 220/255.f, 220/255.f);
+        glBegin(GL_QUADS); // papan iklan bawah
+            glVertex3f(-12+(i*40),-20,-55);
+            glVertex3f(-12+(i*40),-20,-50);
+            glVertex3f(-12+(i*40),-10,-50);
+            glVertex3f(-12+(i*40),-10,-55);
+        glEnd();
+        glBegin(GL_QUADS); // papan iklan bawah
+            glVertex3f(22+(i*40),-20,-55);
+            glVertex3f(22+(i*40),-20,-50);
+            glVertex3f(22+(i*40),-10,-50);
+            glVertex3f(22+(i*40),-10,-55);
+        glEnd();
+        glColor3f(221/255.f, 208/255.f, 141/255.f);
+        glBegin(GL_QUADS); // banner
+            glVertex3f(-10+(i*40),-20,-52);
+            glVertex3f(20+(i*40),-20,-52);
+            glVertex3f(20+(i*40),30,-52);
+            glVertex3f(-10+(i*40),30,-52);
+        glEnd();
+        glColor3f(202/255.f, 189/255.f, 124/255.f);
+        glBegin(GL_QUADS); // banner
+            glVertex3f(-10+(i*40),-20,-52);
+            glVertex3f(-10+(i*40),-20,-50);
+            glVertex3f(-10+(i*40),30,-50);
+            glVertex3f(-10+(i*40),30,-52);
+        glEnd();
+        glBegin(GL_QUADS); // banner
+            glVertex3f(20+(i*40),-20,-52);
+            glVertex3f(20+(i*40),-20,-50);
+            glVertex3f(20+(i*40),30,-50);
+            glVertex3f(20+(i*40),30,-52);
+        glEnd();
+        glBegin(GL_QUADS); // banner
+            glVertex3f(-10+(i*40),30,-52);
+            glVertex3f(-10+(i*40),30,-50);
+            glVertex3f(20+(i*40),30,-50);
+            glVertex3f(20+(i*40),30,-52);
+        glEnd();
+    }
 
     glPopMatrix();
     glutSwapBuffers();
