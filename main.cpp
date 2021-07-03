@@ -322,6 +322,13 @@ void tampil(void){
         glEnd();
         }
     }
+    
+    //matahari
+    glPushMatrix();
+        glColor3f(1,1,0);
+        glTranslated(0,300,0);
+        glutSolidSphere(15,20,20);
+    glPopMatrix();
 
     glPopMatrix();
     glutSwapBuffers();
