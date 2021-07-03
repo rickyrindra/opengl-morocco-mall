@@ -129,7 +129,29 @@ void tampil(void){
         glVertex3f(-280, 70, 40);
     glEnd();
 
-
+    // dinding jek
+    glBegin(GL_QUADS);
+    glColor3f(0.8,0.8,0.8);
+        glVertex3f(220, -50, -30);
+        glVertex3f(120, -50, -50);
+        glVertex3f(120, 70, -50);
+        glVertex3f(220, 70, -30);
+    glEnd();
+    glBegin(GL_QUADS);
+    glColor3f(0.8,0.8,0.8);
+        glVertex3f(120, -50, -50);
+        glVertex3f(-30, -50, -50);
+        glVertex3f(-30, 70, -50);
+        glVertex3f(120, 70, -50);
+    glEnd();
+    glBegin(GL_QUADS);
+    glColor3f(0.8,0.8,0.8);
+        glVertex3f(-50, -50, -50);
+        glVertex3f(-130, -50, -60);
+        glVertex3f(-130, 70, -60);
+        glVertex3f(-50, 70, -50);
+    glEnd();
+    
     // atap
     glColor3f(0.85,0.85,0.85);
     glBegin(GL_POLYGON);
