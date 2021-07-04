@@ -1147,6 +1147,212 @@ void tampil(void){
         glVertex3f(-60,4,-61.25);
         glVertex3f(-60,4,-51.25);
     glEnd();
+    
+    //LANTAI 2 DEKET
+    //LANTAI 2 1
+    glColor3f(255/255.f,251/255.f,231/255.f);
+    glBegin(GL_POLYGON);
+        glVertex3f(210,-10,27);
+        glVertex3f(210,-10,10);
+        glVertex3f(160,-10,10);
+        glVertex3f(160,-10,40);
+    glEnd();
+
+    //LANTAI 2 2
+    glColor3f(255/255.f,251/255.f,231/255.f);
+    glBegin(GL_POLYGON);
+        glVertex3f(160,-10,40);
+        glVertex3f(160,-10,10);
+        glVertex3f(100,-10,30);
+        glVertex3f(90,-10,30);
+        glVertex3f(90,-10,50);
+    glEnd();
+
+    //LANTAI 2 3
+    glColor3f(255/255.f,251/255.f,231/255.f);
+    glBegin(GL_POLYGON);
+        glVertex3f(90,-10,50);
+        glVertex3f(90,-10,30);
+        glVertex3f(10,-10,10);
+        glVertex3f(10,-10,50);
+    glEnd();
+
+    //LANTAI 2 4
+    glColor3f(255/255.f,251/255.f,231/255.f);
+    glBegin(GL_POLYGON);
+        glVertex3f(10,-10,50);
+        glVertex3f(10,-10,10);
+        glVertex3f(-100,-10,30);
+        glVertex3f(-100,-10,55);
+        glVertex3f(-50,-10,55);
+        glVertex3f(-30,-10,50);
+    glEnd();
+
+    //LANTAI 2 5
+    glColor3f(255/255.f,251/255.f,231/255.f);
+    glBegin(GL_POLYGON);
+        glVertex3f(-100,-10,55);
+        glVertex3f(-100,-10,30);
+        glVertex3f(-160,-10,20);
+        glVertex3f(-190,-10,20);
+        glVertex3f(-190,-10,50);
+    glEnd();
+
+    //LANTAI 2 6
+    glColor3f(255/255.f,251/255.f,231/255.f);
+    glBegin(GL_POLYGON);
+        glVertex3f(-190,-10,50);
+        glVertex3f(-190,-10,0);
+        glVertex3f(-280,-10,0);
+        glVertex3f(-280,-10,40);
+    glEnd();
+
+    //LANTAI 2 JAUH
+    //LANTAI 2 7
+    glColor3f(255/255.f,251/255.f,231/255.f);
+    glBegin(GL_POLYGON);
+        glVertex3f(-280,-10,0);
+        glVertex3f(-190,-10,0);
+        glVertex3f(-190,-10,-60);
+        glVertex3f(-280,-10,-60);
+    glEnd();
+
+    //LANTAI 2 8
+    glColor3f(255/255.f,251/255.f,231/255.f);
+    glBegin(GL_POLYGON);
+        glVertex3f(-190,-10,-20);
+        glVertex3f(-140,-10,-20);
+        glVertex3f(-90,-10,-30);
+        glVertex3f(-50,-10,-30);
+        glVertex3f(-50,-10,-50);
+        glVertex3f(-130,-10,-60);
+        glVertex3f(-190,-10,-60);
+    glEnd();
+
+    //LANTAI 2 9
+    glColor3f(255/255.f,251/255.f,231/255.f);
+    glBegin(GL_POLYGON);
+        glVertex3f(-50,-10,-30);
+        glVertex3f(10,-10,-10);
+        glVertex3f(90,-10,-30);
+        glVertex3f(100,-10,-30);
+        glVertex3f(120,-10,-25);
+        glVertex3f(120,-10,-50);
+        glVertex3f(-50,-10,-50);
+    glEnd();
+
+    //LANTAI 2 10
+    glColor3f(255/255.f,251/255.f,231/255.f);
+    glBegin(GL_POLYGON);
+        glVertex3f(120,-10,-25);
+        glVertex3f(170,-10,-10);
+        glVertex3f(200,-10,-10);
+        glVertex3f(200,-10,-30);
+        glVertex3f(120,-10,-50);
+    glEnd();
+
+    //LANTAI 3 DEKET
+    //LANTAI 3 1
+    glColor3f(255/255.f,251/255.f,231/255.f);
+    glBegin(GL_POLYGON);
+        glVertex3f(210,30,27);
+        glVertex3f(210,30,10);
+        glVertex3f(160,30,10);
+        glVertex3f(160,30,40);
+    glEnd();
+
+    //LANTAI 3 2
+    glColor3f(255/255.f,251/255.f,231/255.f);
+    glBegin(GL_POLYGON);
+        glVertex3f(160,30,40);
+        glVertex3f(160,30,10);
+        glVertex3f(100,30,30);
+        glVertex3f(90,30,30);
+        glVertex3f(90,30,50);
+    glEnd();
+
+    //LANTAI 3 3
+    glColor3f(255/255.f,251/255.f,231/255.f);
+    glBegin(GL_POLYGON);
+        glVertex3f(90,30,50);
+        glVertex3f(90,30,30);
+        glVertex3f(10,30,10);
+        glVertex3f(10,30,50);
+    glEnd();
+
+    //LANTAI 3 4
+    glColor3f(255/255.f,251/255.f,231/255.f);
+    glBegin(GL_POLYGON);
+        glVertex3f(10,30,50);
+        glVertex3f(10,30,10);
+        glVertex3f(-100,30,30);
+        glVertex3f(-100,30,55);
+        glVertex3f(-50,30,55);
+        glVertex3f(-30,30,50);
+    glEnd();
+
+    //LANTAI 3 5
+    glColor3f(255/255.f,251/255.f,231/255.f);
+    glBegin(GL_POLYGON);
+        glVertex3f(-100,30,55);
+        glVertex3f(-100,30,30);
+        glVertex3f(-160,30,20);
+        glVertex3f(-190,30,20);
+        glVertex3f(-190,30,50);
+    glEnd();
+
+    //LANTAI 3 6
+    glColor3f(255/255.f,251/255.f,231/255.f);
+    glBegin(GL_POLYGON);
+        glVertex3f(-190,30,50);
+        glVertex3f(-190,30,0);
+        glVertex3f(-280,30,0);
+        glVertex3f(-280,30,40);
+    glEnd();
+
+    //LANTAI 3 JAUH
+    //LANTAI 3 7
+    glColor3f(255/255.f,251/255.f,231/255.f);
+    glBegin(GL_POLYGON);
+        glVertex3f(-280,30,0);
+        glVertex3f(-190,30,0);
+        glVertex3f(-190,30,-60);
+        glVertex3f(-280,30,-60);
+    glEnd();
+
+    //LANTAI 3 8
+    glColor3f(255/255.f,251/255.f,231/255.f);
+    glBegin(GL_POLYGON);
+        glVertex3f(-190,30,-20);
+        glVertex3f(-140,30,-20);
+        glVertex3f(-90,30,-30);
+        glVertex3f(-50,30,-30);
+        glVertex3f(-50,30,-50);
+        glVertex3f(-130,30,-60);
+        glVertex3f(-190,30,-60);
+    glEnd();
+
+    //LANTAI 3 9
+    glColor3f(255/255.f,251/255.f,231/255.f);
+    glBegin(GL_POLYGON);
+        glVertex3f(-50,30,-30);
+        glVertex3f(10,30,-10);
+        glVertex3f(90,30,-30);
+        glVertex3f(100,30,-30);
+        glVertex3f(120,30,-25);
+        glVertex3f(120,30,-50);
+        glVertex3f(-50,30,-50);
+    glEnd();
+
+    //LANTAI 3 10
+    glColor3f(255/255.f,251/255.f,231/255.f);
+    glBegin(GL_POLYGON);
+        glVertex3f(120,30,-25);
+        glVertex3f(170,30,-10);
+        glVertex3f(200,30,-10);
+        glVertex3f(200,30,-30);
+        glVertex3f(120,30,-50);
+    glEnd();
 
     glPopMatrix();
     glutSwapBuffers();
