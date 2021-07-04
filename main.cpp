@@ -329,6 +329,82 @@ void tampil(void){
         glTranslated(0,300,0);
         glutSolidSphere(15,20,20);
     glPopMatrix();
+    
+    //papan iklan
+    for(int i=0; i<2; i++){
+        glColor3f(221/255.f, 208/255.f, 141/255.f);
+        glBegin(GL_QUADS); // banner
+            glVertex3f(20+(i*40),-30,55);
+            glColor3f(214/255.f,21/255.f,15/255.f);
+            glVertex3f(50+(i*40),-30,55);
+            glColor3f(21/255.f,24/255.f,0/255.f);
+            glVertex3f(50+(i*40),40,55);
+            glColor3f(231/255.f,24/255.f,536/255.f);
+            glVertex3f(20+(i*40),40,55);
+        glEnd();
+        glColor3f(255/255.f, 255/255.f, 255/255.f);
+        glBegin(GL_QUADS); // banner
+            glVertex3f(20+(i*40),-30,55);
+            glVertex3f(20+(i*40),-30,53);
+            glVertex3f(20+(i*40),40,53);
+            glVertex3f(20+(i*40),40,55);
+        glEnd();
+        glBegin(GL_QUADS); // banner
+            glVertex3f(50+(i*40),-30,55);
+            glVertex3f(50+(i*40),-30,53);
+            glVertex3f(50+(i*40),40,53);
+            glVertex3f(50+(i*40),40,55);
+        glEnd();
+        glBegin(GL_QUADS); // banner
+            glVertex3f(20+(i*40),40,55);
+            glVertex3f(20+(i*40),40,53);
+            glVertex3f(50+(i*40),40,53);
+            glVertex3f(50+(i*40),40,55);
+        glEnd();
+        glBegin(GL_QUADS); // banner
+            glVertex3f(20+(i*40),-30,55);
+            glVertex3f(20+(i*40),-30,53);
+            glVertex3f(50+(i*40),-30,53);
+            glVertex3f(50+(i*40),-30,55);
+        glEnd();
+    }
+    for(int i=0; i<3; i++){
+        glColor3f(221/255.f, 208/255.f, 141/255.f);
+        glBegin(GL_QUADS); // banner
+            glVertex3f(-170+(i*40),-30,58);
+            glColor3f(25/255.f,21/255.f,15/255.f);
+            glVertex3f(-140+(i*40),-30,58);
+            glColor3f(21/255.f,24/255.f,0/255.f);
+            glVertex3f(-140+(i*40),40,58);
+            glColor3f(341/255.f,24/255.f,12/255.f);
+            glVertex3f(-170+(i*40),40,58);
+        glEnd();
+        glColor3f(255/255.f, 255/255.f, 255/255.f);
+        glBegin(GL_QUADS); // banner
+            glVertex3f(-170+(i*40),-30,58);
+            glVertex3f(-170+(i*40),-30,56);
+            glVertex3f(-170+(i*40),40,58);
+            glVertex3f(-170+(i*40),40,56);
+        glEnd();
+        glBegin(GL_QUADS); // banner
+            glVertex3f(-140+(i*40),-30,58);
+            glVertex3f(-140+(i*40),-30,56);
+            glVertex3f(-140+(i*40),40,56);
+            glVertex3f(-140+(i*40),40,58);
+        glEnd();
+        glBegin(GL_QUADS); // banner
+            glVertex3f(-170+(i*40),40,58);
+            glVertex3f(-170+(i*40),40,56);
+            glVertex3f(-140+(i*40),40,56);
+            glVertex3f(-140+(i*40),40,58);
+        glEnd();
+        glBegin(GL_QUADS); // banner
+            glVertex3f(-170+(i*40),-30,58);
+            glVertex3f(-170+(i*40),-30,56);
+            glVertex3f(-140+(i*40),-30,56);
+            glVertex3f(-140+(i*40),-30,58);
+        glEnd();
+    }
 
     glPopMatrix();
     glutSwapBuffers();
