@@ -1148,7 +1148,7 @@ void tampil(void){
         glVertex3f(-60,4,-51.25);
     glEnd();
     
-    //LANTAI 2 DEKET
+    //LANTAI 2 DEKET deva
     //LANTAI 2 1
     glColor3f(255/255.f,251/255.f,231/255.f);
     glBegin(GL_POLYGON);
