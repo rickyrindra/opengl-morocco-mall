@@ -61,6 +61,95 @@ void init(void){
     glMatrixMode(GL_MODELVIEW);
 }
 
+void eskalator(float aDasar, float bDasar,float tinggiDasar,float aTegak,float bTegak,
+               float tinggiTegak,float aMashok,float bMashok,int aCover,
+               int bCover,int yCover,float z1, float z2){
+    //ESKALATOR
+    //PERULANGAN TANGGA ALAS
+
+    while(aDasar>=-190 && tinggiDasar<=-10){
+        glBegin(GL_QUADS);
+        glColor3f(127/255.f,127/255.f,127/255.f);
+        glVertex3f(aDasar,tinggiDasar,z1);
+        glVertex3f(aDasar,tinggiDasar,z2);
+        glVertex3f(bDasar,tinggiDasar,z2);
+        glVertex3f(bDasar,tinggiDasar,z1);
+        glEnd();
+        aDasar-=5;
+        bDasar-=5;
+        tinggiDasar+=5;
+    }
+
+    //PERULANGAN TANGGA TEGAK/KOTAK
+    while(aTegak<=-150 && aTegak>=-190){
+        glBegin(GL_QUADS);
+        glColor3f(89/255.f,89/255.f,89/255.f);
+        glVertex3f(aTegak,tinggiTegak,z1);
+        glVertex3f(bTegak,tinggiTegak,z1);
+        glVertex3f(bTegak,tinggiTegak+5,z1);
+        glVertex3f(aTegak,tinggiTegak+5,z1);
+        glEnd();
+        aTegak-=5;
+        bTegak-=5;
+        tinggiTegak+=5;
+    }
+
+    //PERULANGAN TANGGA TEGAK/KOTAK
+    while(aTegak<=-150 && aTegak>=-190){
+        glBegin(GL_QUADS);
+        glColor3f(89/255.f,89/255.f,89/255.f);
+        glVertex3f(aTegak,tinggiTegak,z2);
+        glVertex3f(bTegak,tinggiTegak,z2);
+        glVertex3f(bTegak,tinggiTegak+5,z2);
+        glVertex3f(aTegak,tinggiTegak+5,z2);
+        glEnd();
+        aTegak-=5;
+        bTegak-=5;
+        tinggiTegak+=5;
+    }
+
+    //PERULANGAN TANGGA MASHOK
+    while(aMashok>=-190 && bMashok<-10){
+        glBegin(GL_QUADS);
+        glColor3f(64/255.f,64/255.f,64/255.f);
+        glVertex3f(aMashok,bMashok,z1);
+        glVertex3f(aMashok,bMashok,z2);
+        glVertex3f(aMashok,bMashok+5,z2);
+        glVertex3f(aMashok,bMashok+5,z1);
+        glEnd();
+        aMashok-=5;
+        bMashok+=5;
+    }
+
+    //COVER TANGGA DEPAN
+    while(aCover>=-190 && yCover<-10){
+       glBegin(GL_QUADS);
+        glColor3f(89/255.f,89/255.f,89/255.f);
+        glVertex3f(aCover,-50,z1);
+        glVertex3f(bCover,-50,z1);
+        glVertex3f(bCover,yCover,z1);
+        glVertex3f(aCover,yCover,z1);
+        glEnd();
+        aCover-=5;
+        bCover-=5;
+        yCover+=5;
+    }
+
+    //COVER TANGGA BELAKANG
+    while(aCover>=-190 && yCover<-10){
+       glBegin(GL_QUADS);
+        glColor3f(89/255.f,89/255.f,89/255.f);
+        glVertex3f(aCover,-50,z2);
+        glVertex3f(bCover,-50,z2);
+        glVertex3f(bCover,yCover,z2);
+        glVertex3f(aCover,yCover,z2);
+        glEnd();
+        aCover-=5;
+        bCover-=5;
+        yCover+=5;
+    }
+}
+
 void tampil(void){
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -1501,6 +1590,10 @@ void tampil(void){
         glVertex3f(-285,-30,52);
         glVertex3f(-285,-30,42);
     glEnd();
+    
+    //ESKALATOR
+    eskalator(-150,-145,-50,-155,-150,-50,-150,-50,-155,-160,-45,15,0);
+    eskalator(-150,-145,-50,-155,-150,-50,-150,-50,-155,-160,-45,-10,-25);
 
     glPopMatrix();
     glutSwapBuffers();
