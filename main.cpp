@@ -190,8 +190,8 @@ void tampil(void){
     glColor3f(229/255.f, 148/255.f, 148/255.f);
     glBegin(GL_POLYGON);
         glVertex3f(-280,-49.9,-80);
-        glVertex3f(220,-49.9,-80);
-        glVertex3f(220,-49.9,75);
+        glVertex3f(350,-49.9,-80);
+        glVertex3f(350,-49.9,75);
         glVertex3f(-280,-49.9,75);
     glEnd();
 
@@ -199,8 +199,8 @@ void tampil(void){
     glColor3f(15/255.f, 154/255.f, 3/255.f);
     glBegin(GL_POLYGON);
         glVertex3f(-280,-49.9,-140);
-        glVertex3f(220,-49.9,-140);
-        glVertex3f(220,-49.9,-80);
+        glVertex3f(350,-49.9,-140);
+        glVertex3f(350,-49.9,-80);
         glVertex3f(-280,-49.9,-80);
     glEnd();
 
@@ -329,7 +329,7 @@ void tampil(void){
         glTranslated(0,300,0);
         glutSolidSphere(15,20,20);
     glPopMatrix();
-    
+
     //papan iklan
     for(int i=0; i<2; i++){
         glColor3f(221/255.f, 208/255.f, 141/255.f);
@@ -827,7 +827,7 @@ void tampil(void){
         glVertex3f(-60,4,-61.25);
         glVertex3f(-60,4,-51.25);
     glEnd();
-    
+
     // balkon lurus kiri
     glColor3f(180/255.f, 180/255.f, 180/255.f);
     glBegin(GL_QUADS); // lantai
@@ -1146,6 +1146,154 @@ void tampil(void){
         glVertex3f(-60,-9,-61.25);
         glVertex3f(-60,4,-61.25);
         glVertex3f(-60,4,-51.25);
+    glEnd();
+
+    // jalan raya
+    glColor3f(100/255.f, 100/255.f, 100/255.f);
+    glBegin(GL_QUADS);
+        glVertex3d(-350,-49.9,75);
+        glVertex3d(350,-49.9,75);
+        glVertex3d(350,-49.9,150);
+        glVertex3d(-350,-49.9,150);
+    glEnd();
+    // bahu jalan
+    glColor3f(210/255.f,210/255.f,210/255.f);
+    glBegin(GL_QUADS);
+        glVertex3d(-350,-45,105);
+        glVertex3d(350,-45,105);
+        glVertex3d(350,-45,120);
+        glVertex3d(-350,-45,120);
+    glEnd();
+    glColor3f(58/255.f,58/255.f,58/255.f);
+    glBegin(GL_QUADS);
+        glVertex3d(-350,-49.9,120);
+        glVertex3d(350,-49.9,120);
+        glVertex3d(350,-45,120);
+        glVertex3d(-350,-45,120);
+    glEnd();
+    glBegin(GL_QUADS);
+        glVertex3d(-350,-49.9,105);
+        glVertex3d(350,-49.9,105);
+        glVertex3d(350,-45,105);
+        glVertex3d(-350,-45,105);
+    glEnd();
+    glColor3f(0.95,0.95,0.95);
+    for(int i=0; i<70; i++){
+        glBegin(GL_QUADS);
+            glVertex3d(-350+(i*10),-49.9,120.1);
+            glVertex3d(-345+(i*10),-49.9,120.1);
+            glVertex3d(-345+(i*10),-45,120.1);
+            glVertex3d(-350+(i*10),-45,120.1);
+        glEnd();
+        glBegin(GL_QUADS);
+            glVertex3d(-350+(i*10),-49.9,104.9);
+            glVertex3d(-345+(i*10),-49.9,104.9);
+            glVertex3d(-345+(i*10),-45,104.9);
+            glVertex3d(-350+(i*10),-45,104.9);
+        glEnd();
+    }
+    glColor3f(1,1,1);
+    for(int i=0; i<35; i++){
+        glBegin(GL_QUADS);
+            glVertex3d(-350+(i*20),-49.8,135.5);
+            glVertex3d(-340+(i*20),-49.8,135.5);
+            glVertex3d(-340+(i*20),-49.8,134.5);
+            glVertex3d(-350+(i*20),-49.8,134.5);
+        glEnd();
+        glBegin(GL_QUADS);
+            glVertex3d(-350+(i*20),-49.8,90.5);
+            glVertex3d(-340+(i*20),-49.8,90.5);
+            glVertex3d(-340+(i*20),-49.8,89.5);
+            glVertex3d(-350+(i*20),-49.8,89.5);
+        glEnd();
+    }
+
+    // PARKIRAN
+    glColor3f(100/255.f, 100/255.f, 100/255.f);
+    glBegin(GL_QUADS);
+        glVertex3f(-350,-49.9,-140);
+        glVertex3f(-280,-49.9,-140);
+        glVertex3f(-280,-49.9,75);
+        glVertex3f(-350,-49.9,75);
+    glEnd();
+    // GARIS PUTIH
+    glColor3f(1,1,1);
+    for(int i=0; i<2; i++){
+        glBegin(GL_QUADS); // kanan dan kiri
+            glVertex3f(-349+(i*67),-49.8,-139);
+            glVertex3f(-348+(i*67),-49.8,-139);
+            glVertex3f(-348+(i*67),-49.8,41);
+            glVertex3f(-349+(i*67),-49.8,41);
+        glEnd();
+    }
+    glBegin(GL_QUADS); // belakang
+        glVertex3f(-348,-49.8,-139);
+        glVertex3f(-282,-49.8,-139);
+        glVertex3f(-282,-49.8,-138);
+        glVertex3f(-348,-49.8,-138);
+    glEnd();
+    glBegin(GL_QUADS); // depan
+        glVertex3f(-348,-49.8,40);
+        glVertex3f(-302,-49.8,40);
+        glVertex3f(-302,-49.8,41);
+        glVertex3f(-348,-49.8,41);
+    glEnd();
+    int jarak_parkir=0;
+    for(int i=0; i<3; i++){
+        for(int j=0; j<11; j++){
+            glBegin(GL_QUADS); // garis parkir
+                glVertex3f(-348+(i*26),-49.8,-124+jarak_parkir);
+                glVertex3f(-333+(i*26),-49.8,-124+jarak_parkir);
+                glVertex3f(-333+(i*26),-49.8,-123+jarak_parkir);
+                glVertex3f(-348+(i*26   ),-49.8,-123+jarak_parkir);
+            glEnd();
+            jarak_parkir+=14;
+        }
+        jarak_parkir=0;
+    }
+
+    // trotoar
+    glColor3f(229/255.f, 148/255.f, 148/255.f);
+    glBegin(GL_POLYGON);
+        glVertex3f(-350,-49.8,42);
+        glVertex3f(-302,-49.8,42);
+        glVertex3f(-302,-49.8,75);
+        glVertex3f(-350,-49.8,75);
+    glEnd();
+
+    // kartu masuk
+    glColor3f(0/255.f, 99/255.f, 215/255.f);
+    glBegin(GL_POLYGON); // atas
+        glVertex3f(-285,-30,42);
+        glVertex3f(-280,-30,42);
+        glVertex3f(-280,-30,52);
+        glVertex3f(-285,-30,52);
+    glEnd();
+    glColor3f(2/255.f, 97/255.f, 209/255.f);
+    glBegin(GL_POLYGON); // depan
+        glVertex3f(-285,-49.8,52);
+        glVertex3f(-280,-49.8,52);
+        glVertex3f(-280,-30,52);
+        glVertex3f(-285,-30,52);
+    glEnd();
+    glBegin(GL_POLYGON); // belakang
+        glVertex3f(-285,-49.8,42);
+        glVertex3f(-280,-49.8,42);
+        glVertex3f(-280,-30,42);
+        glVertex3f(-285,-30,42);
+    glEnd();
+    glColor3f(1/255.f, 90/255.f, 195/255.f);
+    glBegin(GL_POLYGON); // kanan
+        glVertex3f(-280,-49.8,42);
+        glVertex3f(-280,-49.8,52);
+        glVertex3f(-280,-30,52);
+        glVertex3f(-280,-30,42);
+    glEnd();
+    glBegin(GL_POLYGON); // kiri
+        glVertex3f(-285,-49.8,42);
+        glVertex3f(-285,-49.8,52);
+        glVertex3f(-285,-30,52);
+        glVertex3f(-285,-30,42);
     glEnd();
 
     glPopMatrix();
