@@ -150,6 +150,58 @@ void eskalator(float aDasar, float bDasar,float tinggiDasar,float aTegak,float b
     }
 }
 
+void tabung(float x, float y, float z, float scale_x, float scale_y, float scale_z, float color1, float color2, float color3, float alpha)
+{
+        glPushMatrix();
+        glTranslatef(x,y,z);
+        glScalef(scale_x,scale_y,scale_z);
+
+        glBegin( GL_TRIANGLE_FAN );
+        glColor3f(0.85,0.85,0.85);
+            //change y value here and in the vertex below to move the end up or
+            // down to seal the top end of the cylinder
+        glNormal3f(0.0f,1.0f,0.0f);
+        glVertex3f(0.0f,6.0f,0.0f);
+        for(int i=0;i<=300;i++)
+        {
+            glVertex3f(2*cos(-i),6,2*sin(-i));
+        }
+
+        glEnd();
+        // bottom end of cylinder
+        glBegin( GL_TRIANGLE_FAN );
+        glColor3f(0.85,0.85,0.85);
+        glNormal3f(0.0f,-1.0f,0.0f);
+            //change y value here and in the vertex below to move the end up or
+            // down to seal the bottom end of the cylinder. Delete for a cone
+        glVertex3f(0.0f,-0,0.0f);
+        for(int i=0;i<=300;i++)
+        {
+            glVertex3f(2*cos(i),0,2*sin(i));
+        }
+        glEnd();
+
+        //side of cylinder, y-values are used for the length of the cylinder
+        //x and z values are used for the radius.
+        // for a cone change y values to integers for the length.
+        for(int j=0;j<=45;j++){
+
+        glBegin(GL_QUAD_STRIP);
+            for(int i=0;i<300;i++)
+            {
+                glNormal3f(2*cos(i), 0.0f, 2*sin(i));
+
+        //  for a cone change the x and z values to 0 for a central cone or other integers for an offset cone
+        // don't forget to delete the bottom end circle above.
+                glColor4f(color1/255.f,color2/255.f,color3/255.f,alpha);
+                glVertex3f(2*cos(i), (j)/7, 2*sin(i));
+                glVertex3f(2*cos(i), (j+1)/7, 2*sin(i));
+            }
+        }
+        glEnd();
+        glPopMatrix();
+}
+
 void tampil(void){
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -1983,6 +2035,26 @@ void tampil(void){
     glVertex3f(-50,-25,-65);
     glEnd();
 
+    tabung(210, -50, -2.5, 7, 19.9, 7, 82, 194, 212, 0.25);
+    //dinding
+    //kiri
+    glBegin(GL_QUADS);
+    glColor3f(0.8,0.8,0.8);
+    glVertex3f(220,-49.9,25);
+    glVertex3f(220,-49.9,7.5);
+    glVertex3f(220,69.9,7.5);
+    glVertex3f(220,69.9,25);
+    glEnd();
+
+    //kanan
+    glBegin(GL_QUADS);
+    glColor3f(0.8,0.8,0.8);
+    glVertex3f(220,-49.9,-30);
+    glVertex3f(220,-49.9,-12.5);
+    glVertex3f(220,69.9,-12.5);
+    glVertex3f(220,69.9,-30);
+    glEnd();
+    
     glPopMatrix();
     glutSwapBuffers();
 }
