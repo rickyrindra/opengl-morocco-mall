@@ -80,6 +80,8 @@ void init(void){
 
     glEnable(GL_DEPTH_TEST);
     is_depth=1;
+    
+    glLineWidth(6.0);
 
     glMatrixMode(GL_MODELVIEW);
 }
@@ -371,6 +373,276 @@ void luar_lift(){
             glEnd();
         }
     }
+}
+
+void bangkuDepan(float x1, float x2,float z1, float z2){
+    //SISI KANAN LUAR
+    glColor3f(139/255.f,85/255.f,83/255.f);
+    glBegin(GL_POLYGON);
+    glVertex3f(x1,-50,z1);
+    glVertex3f(x1,-50,z2);
+    glVertex3f(x1,-40,z2);
+    glVertex3f(x1,-40,z1);
+    glEnd();
+    //SISI KANAN DALAM
+    glColor3f(139/255.f,85/255.f,83/255.f);
+    glBegin(GL_POLYGON);
+    glVertex3f(x1-2,-50,z1);
+    glVertex3f(x1-2,-50,z2);
+    glVertex3f(x1-2,-40,z2);
+    glVertex3f(x1-2,-40,z1);
+    glEnd();
+    //SISI KANAN HADEP DEPAN
+    glColor3f(139/255.f,85/255.f,83/255.f);
+    glBegin(GL_POLYGON);
+    glVertex3f(x1,-50,z1);
+    glVertex3f(x1-2,-50,z1);
+    glVertex3f(x1-2,-40,z1);
+    glVertex3f(x1,-40,z1);
+    glEnd();
+    //SISI KANAN HADEP BELAKANG
+    glColor3f(139/255.f,85/255.f,83/255.f);
+    glBegin(GL_POLYGON);
+    glVertex3f(x1,-50,z2);
+    glVertex3f(x1-2,-50,z2);
+    glVertex3f(x1-2,-40,z2);
+    glVertex3f(x1,-40,z2);
+    glEnd();
+    //SISI KANAN HADEP ATAS
+    glColor3f(139/255.f,85/255.f,83/255.f);
+    glBegin(GL_POLYGON);
+    glVertex3f(x1,-40,z1);
+    glVertex3f(x1-2,-40,z1);
+    glVertex3f(x1-2,-40,z2);
+    glVertex3f(x1,-40,z2);
+    glEnd();
+
+    //SISI KIRI DALEM
+    glColor3f(139/255.f,85/255.f,83/255.f);
+    glBegin(GL_POLYGON);
+    glVertex3f(x2+2,-50,z1);
+    glVertex3f(x2+2,-50,z2);
+    glVertex3f(x2+2,-40,z2);
+    glVertex3f(x2+2,-40,z1);
+    glEnd();
+    //SISI KIRI LUAR
+    glColor3f(139/255.f,85/255.f,83/255.f);
+    glBegin(GL_POLYGON);
+    glVertex3f(x2,-50,z1);
+    glVertex3f(x2,-50,z2);
+    glVertex3f(x2,-40,z2);
+    glVertex3f(x2,-40,z1);
+    glEnd();
+    //SISI KIRI HADEP DEPAN
+    glColor3f(139/255.f,85/255.f,83/255.f);
+    glBegin(GL_POLYGON);
+    glVertex3f(x2+2,-50,z1);
+    glVertex3f(x2,-50,z1);
+    glVertex3f(x2,-40,z1);
+    glVertex3f(x2+2,-40,z1);
+    glEnd();
+    //SISI KIRI HADEP BELAKANG
+    glColor3f(139/255.f,85/255.f,83/255.f);
+    glBegin(GL_POLYGON);
+    glVertex3f(x2+2,-50,z2);
+    glVertex3f(x2,-50,z2);
+    glVertex3f(x2,-40,z2);
+    glVertex3f(x2+2,-40,z2);
+    glEnd();
+    //SISI KIRI HADEP ATAS
+    glColor3f(139/255.f,85/255.f,83/255.f);
+    glBegin(GL_POLYGON);
+    glVertex3f(x2+2,-40,z1);
+    glVertex3f(x2,-40,z1);
+    glVertex3f(x2,-40,z2);
+    glVertex3f(x2+2,-40,z2);
+    glEnd();
+
+    //ALAS DUDUK
+    glColor3f(94/255.f,44/255.f,6/255.f);
+    glBegin(GL_LINES);
+    glVertex3f(x1,-40,z1);
+    glVertex3f(x2,-40,z1);
+
+    glVertex3f(x1,-40,z1-2);
+    glVertex3f(x2,-40,z1-2);
+
+    glVertex3f(x1,-40,z1-4);
+    glVertex3f(x2,-40,z1-4);
+
+    glVertex3f(x1,-40,z1-6);
+    glVertex3f(x2,-40,z1-6);
+
+    glVertex3f(x1,-40,z2);
+    glVertex3f(x2,-40,z2);
+    glEnd();
+
+    //SENDERAN KANAN & KIRI
+    glColor3f(139/255.f,85/255.f,83/255.f);
+    glBegin(GL_LINES);
+    glVertex3f(x1,-40,z1);
+    glVertex3f(x1,-32,z1);
+
+    glVertex3f(x2,-40,z1);
+    glVertex3f(x2,-32,z1);
+    glEnd();
+
+    //SENDERAN
+    glColor3f(148/255.f,96/255.f,56/255.f);
+    glBegin(GL_LINES);
+    glVertex3f(x1,-40,z1);
+    glVertex3f(x2,-40,z1);
+
+    glVertex3f(x1,-38,z1);
+    glVertex3f(x2,-38,z1);
+
+    glVertex3f(x1,-36,z1);
+    glVertex3f(x2,-36,z1);
+
+    glVertex3f(x1,-36,z1);
+    glVertex3f(x2,-36,z1);
+
+    glVertex3f(x1,-34,z1);
+    glVertex3f(x2,-34,z1);
+
+    glVertex3f(x1,-32,z1);
+    glVertex3f(x2,-32,z1);
+    glEnd();
+}
+
+void bangkuBelakang(float x1, float x2,float z1, float z2){
+    //SISI KANAN LUAR
+    glColor3f(139/255.f,85/255.f,83/255.f);
+    glBegin(GL_POLYGON);
+    glVertex3f(x1,-50,z1);
+    glVertex3f(x1,-50,z2);
+    glVertex3f(x1,-40,z2);
+    glVertex3f(x1,-40,z1);
+    glEnd();
+    //SISI KANAN DALAM
+    glColor3f(139/255.f,85/255.f,83/255.f);
+    glBegin(GL_POLYGON);
+    glVertex3f(x1-2,-50,z1);
+    glVertex3f(x1-2,-50,z2);
+    glVertex3f(x1-2,-40,z2);
+    glVertex3f(x1-2,-40,z1);
+    glEnd();
+    //SISI KANAN HADEP DEPAN
+    glColor3f(139/255.f,85/255.f,83/255.f);
+    glBegin(GL_POLYGON);
+    glVertex3f(x1,-50,z1);
+    glVertex3f(x1-2,-50,z1);
+    glVertex3f(x1-2,-40,z1);
+    glVertex3f(x1,-40,z1);
+    glEnd();
+    //SISI KANAN HADEP BELAKANG
+    glColor3f(139/255.f,85/255.f,83/255.f);
+    glBegin(GL_POLYGON);
+    glVertex3f(x1,-50,z2);
+    glVertex3f(x1-2,-50,z2);
+    glVertex3f(x1-2,-40,z2);
+    glVertex3f(x1,-40,z2);
+    glEnd();
+    //SISI KANAN HADEP ATAS
+    glColor3f(139/255.f,85/255.f,83/255.f);
+    glBegin(GL_POLYGON);
+    glVertex3f(x1,-40,z1);
+    glVertex3f(x1-2,-40,z1);
+    glVertex3f(x1-2,-40,z2);
+    glVertex3f(x1,-40,z2);
+    glEnd();
+
+    //SISI KIRI DALEM
+    glColor3f(139/255.f,85/255.f,83/255.f);
+    glBegin(GL_POLYGON);
+    glVertex3f(x2+2,-50,z1);
+    glVertex3f(x2+2,-50,z2);
+    glVertex3f(x2+2,-40,z2);
+    glVertex3f(x2+2,-40,z1);
+    glEnd();
+    //SISI KIRI LUAR
+    glColor3f(139/255.f,85/255.f,83/255.f);
+    glBegin(GL_POLYGON);
+    glVertex3f(x2,-50,z1);
+    glVertex3f(x2,-50,z2);
+    glVertex3f(x2,-40,z2);
+    glVertex3f(x2,-40,z1);
+    glEnd();
+    //SISI KIRI HADEP DEPAN
+    glColor3f(139/255.f,85/255.f,83/255.f);
+    glBegin(GL_POLYGON);
+    glVertex3f(x2+2,-50,z1);
+    glVertex3f(x2,-50,z1);
+    glVertex3f(x2,-40,z1);
+    glVertex3f(x2+2,-40,z1);
+    glEnd();
+    //SISI KIRI HADEP BELAKANG
+    glColor3f(139/255.f,85/255.f,83/255.f);
+    glBegin(GL_POLYGON);
+    glVertex3f(x2+2,-50,z2);
+    glVertex3f(x2,-50,z2);
+    glVertex3f(x2,-40,z2);
+    glVertex3f(x2+2,-40,z2);
+    glEnd();
+    //SISI KIRI HADEP ATAS
+    glColor3f(139/255.f,85/255.f,83/255.f);
+    glBegin(GL_POLYGON);
+    glVertex3f(x2+2,-40,z1);
+    glVertex3f(x2,-40,z1);
+    glVertex3f(x2,-40,z2);
+    glVertex3f(x2+2,-40,z2);
+    glEnd();
+
+    //ALAS DUDUK
+    glColor3f(94/255.f,44/255.f,6/255.f);
+    glBegin(GL_LINES);
+    glVertex3f(x1,-40,z1);
+    glVertex3f(x2,-40,z1);
+
+    glVertex3f(x1,-40,z1-2);
+    glVertex3f(x2,-40,z1-2);
+
+    glVertex3f(x1,-40,z1-4);
+    glVertex3f(x2,-40,z1-4);
+
+    glVertex3f(x1,-40,z1-6);
+    glVertex3f(x2,-40,z1-6);
+
+    glVertex3f(x1,-40,z2);
+    glVertex3f(x2,-40,z2);
+    glEnd();
+
+    //SENDERAN KANAN & KIRI
+    glColor3f(139/255.f,85/255.f,83/255.f);
+    glBegin(GL_LINES);
+    glVertex3f(x1,-40,z2);
+    glVertex3f(x1,-32,z2);
+
+    glVertex3f(x2,-40,z2);
+    glVertex3f(x2,-32,z2);
+    glEnd();
+
+    //SENDERAN
+    glColor3f(148/255.f,96/255.f,56/255.f);
+    glBegin(GL_LINES);
+    glVertex3f(x1,-40,z2);
+    glVertex3f(x2,-40,z2);
+
+    glVertex3f(x1,-38,z2);
+    glVertex3f(x2,-38,z2);
+
+    glVertex3f(x1,-36,z2);
+    glVertex3f(x2,-36,z2);
+
+    glVertex3f(x1,-36,z2);
+    glVertex3f(x2,-36,z2);
+
+    glVertex3f(x1,-34,z2);
+    glVertex3f(x2,-34,z2);
+
+    glVertex3f(x1,-32,z2);
+    glVertex3f(x2,-32,z2);
+    glEnd();
 }
 
 void tampil(void){
@@ -2542,6 +2814,13 @@ void tampil(void){
         lift();
     glPopMatrix();
     luar_lift();
+    
+    //BANGKU DEPAN
+    bangkuDepan(-55,-105,52,44);
+    bangkuDepan(-125,-175,52,44);
+
+    //BANGKU BELAKANG
+    bangkuBelakang(-80,-130,-44,-52);
 
 
     glPopMatrix();
