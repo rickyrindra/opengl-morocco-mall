@@ -1147,7 +1147,7 @@ void tampil(void){
         glVertex3f(-60,4,-61.25);
         glVertex3f(-60,4,-51.25);
     glEnd();
-    
+
     //LANTAI 2 DEKET deva
     //LANTAI 2 1
     glColor3f(255/255.f,251/255.f,231/255.f);
@@ -1501,6 +1501,58 @@ void tampil(void){
         glVertex3f(-285,-30,52);
         glVertex3f(-285,-30,42);
     glEnd();
+
+    // IMAX
+    glPushMatrix();
+        glColor3f(0.8,0.8,0.8);
+        glTranslated(300,-10,-20);
+        glutSolidSphere(55,20,20);
+    glPopMatrix();
+
+    // AQUARIUM
+    glColor4f(36/255.f,117/255.f,182/255.f,0.4);
+    glBegin(GL_QUADS);
+        glVertex3f(-50,-50,-10);
+        glVertex3f(-40,-50,-4);
+        glVertex3f(-40,70,-4);
+        glVertex3f(-50,70,-10);
+    glEnd();
+    glColor4f(19/255.f,107/255.f,165/255.f,0.4);
+    glBegin(GL_QUADS);
+        glVertex3f(-40,-50,-4);
+        glVertex3f(-40,-50,4);
+        glVertex3f(-40,70,4);
+        glVertex3f(-40,70,-4);
+    glEnd();
+    glColor4f(36/255.f,117/255.f,182/255.f,0.4);
+    glBegin(GL_QUADS);
+        glVertex3f(-50,-50,10);
+        glVertex3f(-40,-50,4);
+        glVertex3f(-40,70,4);
+        glVertex3f(-50,70,10);
+    glEnd();
+    glColor4f(19/255.f,107/255.f,165/255.f,0.4);
+    glBegin(GL_QUADS);
+        glVertex3f(-50,-50,10);
+        glVertex3f(-60,-50,4);
+        glVertex3f(-60,70,4);
+        glVertex3f(-50,70,10);
+    glEnd();
+    glColor4f(36/255.f,117/255.f,182/255.f,0.4);
+    glBegin(GL_QUADS);
+        glVertex3f(-60,-50,-4);
+        glVertex3f(-60,-50,4);
+        glVertex3f(-60,70,4);
+        glVertex3f(-60,70,-4);
+    glEnd();
+    glColor4f(19/255.f,107/255.f,165/255.f,0.4);
+    glBegin(GL_QUADS);
+        glVertex3f(-50,-50,-10);
+        glVertex3f(-60,-50,-4);
+        glVertex3f(-60,70,-4);
+        glVertex3f(-50,70,-10);
+    glEnd();
+
 
     glPopMatrix();
     glutSwapBuffers();
