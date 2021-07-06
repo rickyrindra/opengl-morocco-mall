@@ -688,8 +688,40 @@ void pot(float x, float y, float z)
     glVertex3f(x-3.5,y-3.0,z+3.5);
     glEnd();
 
-    tabung(x, y-2, z, 0.5, 1, 0.5, 82, 54, 18, 1);
+    //batang
+    glBegin(GL_QUADS);
+    glColor3f(85/255.f,54/255.f,18/255.f);
+    glVertex3f(x-1,y+4,z-2);
+    glVertex3f(x+1,y+4,z-2);
+    glVertex3f(x+1,y-5,z-2);
+    glVertex3f(x-1,y-5,z-2);
+    glEnd();
 
+    glBegin(GL_QUADS);
+    glColor3f(85/255.f,54/255.f,18/255.f);
+    glVertex3f(x-1,y+4,z+2);
+    glVertex3f(x+1,y+4,z+2);
+    glVertex3f(x+1,y-5,z+2);
+    glVertex3f(x-1,y-5,z+2);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(85/255.f,54/255.f,18/255.f);
+    glVertex3f(x+1,y+4,z+2);
+    glVertex3f(x+1,y+4,z-2);
+    glVertex3f(x+1,y-5,z-2);
+    glVertex3f(x+1,y-5,z+2);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(85/255.f,54/255.f,18/255.f);
+    glVertex3f(x-1,y+4,z+2);
+    glVertex3f(x-1,y+4,z-2);
+    glVertex3f(x-1,y-5,z-2);
+    glVertex3f(x-1,y-5,z+2);
+    glEnd();
+
+    //dahan
     glBegin(GL_TRIANGLES);
     glColor3f(17/255.f,84/255.f,19/255.f);
     glVertex3f(x-5,y+3.5,z+2);
@@ -734,6 +766,133 @@ void pot(float x, float y, float z)
     glPushMatrix();
     glColor3f(209/255.f,34/255.f,10/255.f);
     glTranslatef(x-3,y+3,z);
+    glutSolidSphere(1.5,10,10);
+    glPopMatrix();
+
+    glPopMatrix();
+}
+
+void pot2(float x, float y, float z)
+{
+    glPushMatrix();
+    glBegin(GL_QUADS);
+    glColor3f(179/255.f,74/255.f,9/255.f);
+    glVertex3f(x-4,y,z+4);
+    glVertex3f(x+4,y,z+4);
+    glVertex3f(x+2.5,y-9.7,z+2.5);
+    glVertex3f(x-2.5,y-9.7,z+2.5);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(179/255.f,74/255.f,9/255.f);
+    glVertex3f(x-4,y,z-4);
+    glVertex3f(x+4,y,z-4);
+    glVertex3f(x+2.5,y-9.7,z-2.5);
+    glVertex3f(x-2.5,y-9.7,z-2.5);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(179/255.f,74/255.f,9/255.f);
+    glVertex3f(x-4,y,z+4);
+    glVertex3f(x-4,y,z-4);
+    glVertex3f(x-2.5,y-9.7,z-2.5);
+    glVertex3f(x-2.5,y-9.7,z+2.5);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(179/255.f,74/255.f,9/255.f);
+    glVertex3f(x+4,y,z+4);
+    glVertex3f(x+4,y,z-4);
+    glVertex3f(x+2.5,y-9.7,z-2.5);
+    glVertex3f(x+2.5,y-9.7,z+2.5);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(48/255.f,30/255.f,10/255.f);
+    glVertex3f(x-3.5,y-3.0,z-3.5);
+    glVertex3f(x+3.5,y-3.0,z-3.5);
+    glVertex3f(x+3.5,y-3.0,z+3.5);
+    glVertex3f(x-3.5,y-3.0,z+3.5);
+    glEnd();
+
+    //batang
+    glBegin(GL_QUADS);
+    glColor3f(85/255.f,54/255.f,18/255.f);
+    glVertex3f(x-1,y+4,z-2);
+    glVertex3f(x+1,y+4,z-2);
+    glVertex3f(x+1,y-5,z-2);
+    glVertex3f(x-1,y-5,z-2);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(85/255.f,54/255.f,18/255.f);
+    glVertex3f(x-1,y+4,z+2);
+    glVertex3f(x+1,y+4,z+2);
+    glVertex3f(x+1,y-5,z+2);
+    glVertex3f(x-1,y-5,z+2);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(85/255.f,54/255.f,18/255.f);
+    glVertex3f(x+1,y+4,z+2);
+    glVertex3f(x+1,y+4,z-2);
+    glVertex3f(x+1,y-5,z-2);
+    glVertex3f(x+1,y-5,z+2);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(85/255.f,54/255.f,18/255.f);
+    glVertex3f(x-1,y+4,z+2);
+    glVertex3f(x-1,y+4,z-2);
+    glVertex3f(x-1,y-5,z-2);
+    glVertex3f(x-1,y-5,z+2);
+    glEnd();
+
+    //dahan
+    glBegin(GL_TRIANGLES);
+    glColor3f(17/255.f,84/255.f,19/255.f);
+    glVertex3f(x+2,y+3.5,z-5);
+    glVertex3f(x+2,y+25,z);
+    glVertex3f(x+2,y+3.5,z+5);
+
+    glVertex3f(x-2,y+3.5,z-5);
+    glVertex3f(x-2,y+25,z);
+    glVertex3f(x-2,y+3.5,z+5);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(17/255.f,84/255.f,19/255.f);
+    glVertex3f(x-2,y+3.5,z-2);
+    glVertex3f(x+2,y+3.5,z-2);
+    glVertex3f(x+2,y+3.5,z+2);
+    glVertex3f(x-2,y+3.5,z+2);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(17/255.f,84/255.f,19/255.f);
+    glVertex3f(x-2,y+3.5,z-5);
+    glVertex3f(x+2,y+3.5,z-5);
+    glVertex3f(x+2,y+25,z);
+    glVertex3f(x-2,y+25,z);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(17/255.f,84/255.f,19/255.f);
+    glVertex3f(x-2,y+3.5,z+5);
+    glVertex3f(x+2,y+3.5,z+5);
+    glVertex3f(x+2,y+25,z);
+    glVertex3f(x-2,y+25,z);
+    glEnd();
+
+    glPushMatrix();
+    glColor3f(209/255.f,34/255.f,10/255.f);
+    glTranslatef(x,y+3,z+3);
+    glutSolidSphere(1.5,10,10);
+    glPopMatrix();
+
+    glPushMatrix();
+    glColor3f(209/255.f,34/255.f,10/255.f);
+    glTranslatef(x,y+3,z-3);
     glutSolidSphere(1.5,10,10);
     glPopMatrix();
 
@@ -3601,7 +3760,8 @@ void tampil(void){
     pot(-65,-40,-45);
     pot(115,0, 40);
     pot(125,0,-40);
-
+    pot2(225,-40,-20);
+    pot2(225,-40,20);
 
     glPopMatrix();
     glutSwapBuffers();
