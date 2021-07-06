@@ -80,7 +80,7 @@ void init(void){
 
     glEnable(GL_DEPTH_TEST);
     is_depth=1;
-    
+
     glLineWidth(6.0);
 
     glMatrixMode(GL_MODELVIEW);
@@ -971,6 +971,43 @@ void tampil(void){
         glVertex3f(350, -50, -140);
         glVertex3f(350, -50, 100);
         glVertex3f(-350, -50, 100);
+    glEnd();
+
+    // pondasi bawah
+    glColor3f(86/255.f, 46/255.f, 0/255.f);
+    glBegin(GL_QUADS);
+        glVertex3f(-350, -70, -140);
+        glVertex3f(350, -70, -140);
+        glVertex3f(350, -70, 150);
+        glVertex3f(-350, -70, 150);
+    glEnd();
+
+    // pondasi tepi
+    glColor3f(115/255.f, 62/255.f, 0/255.f);
+    glBegin(GL_QUADS); // depan
+        glVertex3f(-350, -50, 150);
+        glVertex3f(350, -50, 150);
+        glVertex3f(350, -70, 150);
+        glVertex3f(-350, -70, 150);
+    glEnd();
+    glBegin(GL_QUADS); // belakang
+        glVertex3f(-350, -50, -140);
+        glVertex3f(350, -50, -140);
+        glVertex3f(350, -70, -140);
+        glVertex3f(-350, -70, -140);
+    glEnd();
+    glColor3f(105/255.f, 55/255.f, 0/255.f);
+    glBegin(GL_QUADS); // kiri
+        glVertex3f(-350, -50, -140);
+        glVertex3f(-350, -50, 150);
+        glVertex3f(-350, -70, 150);
+        glVertex3f(-350, -70, -140);
+    glEnd();
+    glBegin(GL_QUADS); // kanan
+        glVertex3f(350, -50, -140);
+        glVertex3f(350, -50, 150);
+        glVertex3f(350, -70, 150);
+        glVertex3f(350, -70, -140);
     glEnd();
 
     //dinding deva
@@ -3514,7 +3551,7 @@ void tampil(void){
         lift();
     glPopMatrix();
     luar_lift();
-    
+
     //BANGKU DEPAN
     bangkuDepan(-55,-105,52,44);
     bangkuDepan(-125,-175,52,44);
@@ -3523,7 +3560,7 @@ void tampil(void){
     bangkuBelakang(-80,-130,-44,-52);
     bangkuBelakang(-185,-215,-110,-117.5);
     bangkuBelakang(215,175,-110,-117.5);
-    
+
     float aLampu=-300;
     float bLampu=-295;
 
@@ -3642,7 +3679,7 @@ void tampil(void){
         aLampu+=70;
         bLampu+=70;
     }
-    
+
     //BANGJO
     //ALAS SISI HADEP DEPAN
     glBegin(GL_QUADS);
@@ -3812,7 +3849,7 @@ void tampil(void){
         glTranslated(-317.5,4,127);
         glutSolidSphere(2,10,10);
     glPopMatrix();
-    
+
     //POT
     pot(-115,-40, 45);
     pot(-140,-40,-50);
