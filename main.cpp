@@ -772,6 +772,63 @@ void pot(float x, float y, float z)
     glPopMatrix();
 }
 
+void pohon(float x, float y, float z){
+
+        glBegin(GL_QUADS);
+        glColor3f(66/255.f,42/255.f,10/255.f);
+        glVertex3f(x-2.5,y,z-2.5);
+        glVertex3f(x+2.5,y,z-2.5);
+        glVertex3f(x+2.5,y+49.7,z-2.5);
+        glVertex3f(x-2.5,y+49.7,z-2.5);
+        glEnd();
+
+        glBegin(GL_QUADS);
+        glColor3f(66/255.f,42/255.f,10/255.f);
+        glVertex3f(x-2.5,y,z+2.5);
+        glVertex3f(x+2.5,y,z+2.5);
+        glVertex3f(x+2.5,y+49.7,z+2.5);
+        glVertex3f(x-2.5,y+49.7,z+2.5);
+        glEnd();
+
+        glBegin(GL_QUADS);
+        glColor3f(66/255.f,42/255.f,10/255.f);
+        glVertex3f(x-2.5,y,z+2.5);
+        glVertex3f(x-2.5,y,z-2.5);
+        glVertex3f(x-2.5,y+49.7,z-2.5);
+        glVertex3f(x-2.5,y+49.7,z+2.5);
+        glEnd();
+
+        glBegin(GL_QUADS);
+        glColor3f(66/255.f,42/255.f,10/255.f);
+        glVertex3f(x+2.5,y,z+2.5);
+        glVertex3f(x+2.5,y,z-2.5);
+        glVertex3f(x+2.5,y+49.7,z-2.5);
+        glVertex3f(x+2.5,y+49.7,z+2.5);
+        glEnd();
+
+        for(int i=0;i<2;i++)
+        {
+            int awal = x-7.5;
+            int batas = x+7.5;
+            for (int j=awal;j<=batas;j+=15)
+            {
+                int l=z;
+                int k=y+49.7;
+                glPushMatrix();
+                glTranslatef(j,k,l);
+                glColor3f(0.3,0.7,0.3);
+                glutSolidSphere(10,20,20);
+                glPopMatrix();
+            }
+        }
+        //single
+        glPushMatrix();
+        glTranslatef(x,y+64.7,z);
+        glColor3f(0.3,0.7,0.3);
+        glutSolidSphere(10,20,20);
+        glPopMatrix();
+}
+
 void pot2(float x, float y, float z)
 {
     glPushMatrix();
@@ -3464,6 +3521,8 @@ void tampil(void){
 
     //BANGKU BELAKANG
     bangkuBelakang(-80,-130,-44,-52);
+    bangkuBelakang(-185,-215,-110,-117.5);
+    bangkuBelakang(215,175,-110,-117.5);
     
     float aLampu=-300;
     float bLampu=-295;
@@ -3760,6 +3819,12 @@ void tampil(void){
     pot(-65,-40,-45);
     pot(115,0, 40);
     pot(125,0,-40);
+
+    // pohon
+    pohon(245,-49.7,-110);
+    pohon(145,-49.7,-110);
+    pohon(-155,-49.7,-110);
+    pohon(-245,-49.7,-110);
     pot2(225,-40,-20);
     pot2(225,-40,20);
 
