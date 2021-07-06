@@ -2821,6 +2821,125 @@ void tampil(void){
 
     //BANGKU BELAKANG
     bangkuBelakang(-80,-130,-44,-52);
+    
+    float aLampu=-300;
+    float bLampu=-295;
+
+    while(aLampu<=300 && bLampu<=295){
+        //LAMPU JALAN
+        //ALAS SISI HADEP DEPAN
+        glBegin(GL_QUADS);
+        glColor3f(64/255.f,64/255.f,64/255.f);
+        glVertex3f(aLampu,-50,115);
+        glVertex3f(bLampu,-50,115);
+        glVertex3f(bLampu-1,-40,114);
+        glVertex3f(aLampu+1,-40,114);
+        glEnd();
+
+        //ALAS SISI HADEP BELAKANG
+        glBegin(GL_QUADS);
+        glColor3f(64/255.f,64/255.f,64/255.f);
+        glVertex3f(aLampu,-50,110);
+        glVertex3f(bLampu,-50,110);
+        glVertex3f(bLampu-1,-40,111);
+        glVertex3f(aLampu+1,-40,111);
+        glEnd();
+
+        //ALAS SISI HADEP KIRI
+        glBegin(GL_QUADS);
+        glColor3f(64/255.f,64/255.f,64/255.f);
+        glVertex3f(aLampu,-50,115);
+        glVertex3f(aLampu,-50,110);
+        glVertex3f(aLampu+1,-40,111);
+        glVertex3f(aLampu+1,-40,114);
+        glEnd();
+
+        //ALAS SISI HADEP KIRI
+        glBegin(GL_QUADS);
+        glColor3f(64/255.f,64/255.f,64/255.f);
+        glVertex3f(bLampu,-50,115);
+        glVertex3f(bLampu,-50,110);
+        glVertex3f(bLampu-1,-40,111);
+        glVertex3f(bLampu-1,-40,114);
+        glEnd();
+
+        //ALAS SISI HADEP ATAS
+        glBegin(GL_QUADS);
+        glColor3f(64/255.f,64/255.f,64/255.f);
+        glVertex3f(aLampu+1,-40,114);
+        glVertex3f(bLampu-1,-40,114);
+        glVertex3f(bLampu-1,-40,111);
+        glVertex3f(aLampu+1,-40,111);
+        glEnd();
+
+        //TIANG TEGAK DEPAN
+        glBegin(GL_QUADS);
+        glColor3f(64/255.f,64/255.f,64/255.f);
+        glVertex3f(aLampu+2,-40,113);
+        glVertex3f(bLampu-2,-40,113);
+        glVertex3f(bLampu-2,0,113);
+        glVertex3f(aLampu+2,0,113);
+        glEnd();
+
+        //TIANG TEGAK BELAKANG
+        glBegin(GL_QUADS);
+        glColor3f(64/255.f,64/255.f,64/255.f);
+        glVertex3f(aLampu+2,-40,112);
+        glVertex3f(bLampu-2,-40,112);
+        glVertex3f(bLampu-2,0,112);
+        glVertex3f(aLampu+2,0,112);
+        glEnd();
+
+        //TIANG TEGAK KIRI
+        glBegin(GL_QUADS);
+        glColor3f(64/255.f,64/255.f,64/255.f);
+        glVertex3f(aLampu+2,-40,113);
+        glVertex3f(aLampu+2,-40,112);
+        glVertex3f(aLampu+2,0,112);
+        glVertex3f(aLampu+2,0,113);
+        glEnd();
+
+        //TIANG TEGAK KANAN
+        glBegin(GL_QUADS);
+        glColor3f(64/255.f,64/255.f,64/255.f);
+        glVertex3f(bLampu-2,-40,113);
+        glVertex3f(bLampu-2,-40,112);
+        glVertex3f(bLampu-2,0,112);
+        glVertex3f(bLampu-2,0,113);
+        glEnd();
+
+        //CAGAK LAMPU
+        glBegin(GL_LINES);
+        glColor3f(64/255.f,64/255.f,64/255.f);
+        glVertex3f(bLampu-2.5,-2,112.5);
+        glVertex3f(bLampu-2.5,3,116);
+
+        glVertex3f(bLampu-2.5,-2,112.5);
+        glVertex3f(bLampu-2.5,3,109);
+
+        glVertex3f(bLampu-2.5,3,116);
+        glVertex3f(bLampu-2.5,3,119);
+
+        glVertex3f(bLampu-2.5,3,109);
+        glVertex3f(bLampu-2.5,3,106);
+        glEnd();
+
+        //LAMPU JALAN
+        glPushMatrix();
+            glColor3f(1.0,1.0,0.0);
+            glTranslated(bLampu-2.5,1,118);
+            glutSolidSphere(2,10,10);
+        glPopMatrix();
+
+        glPushMatrix();
+            glColor3f(1.0,1.0,0.0);
+            glTranslated(bLampu-2.5,1,107);
+            glutSolidSphere(2,10,10);
+        glPopMatrix();
+
+        aLampu+=70;
+        bLampu+=70;
+    }
 
 
     glPopMatrix();
