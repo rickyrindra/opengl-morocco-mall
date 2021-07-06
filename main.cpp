@@ -645,6 +645,101 @@ void bangkuBelakang(float x1, float x2,float z1, float z2){
     glEnd();
 }
 
+void pot(float x, float y, float z)
+{
+    glPushMatrix();
+    glBegin(GL_QUADS);
+    glColor3f(179/255.f,74/255.f,9/255.f);
+    glVertex3f(x-4,y,z+4);
+    glVertex3f(x+4,y,z+4);
+    glVertex3f(x+2.5,y-9.7,z+2.5);
+    glVertex3f(x-2.5,y-9.7,z+2.5);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(179/255.f,74/255.f,9/255.f);
+    glVertex3f(x-4,y,z-4);
+    glVertex3f(x+4,y,z-4);
+    glVertex3f(x+2.5,y-9.7,z-2.5);
+    glVertex3f(x-2.5,y-9.7,z-2.5);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(179/255.f,74/255.f,9/255.f);
+    glVertex3f(x-4,y,z+4);
+    glVertex3f(x-4,y,z-4);
+    glVertex3f(x-2.5,y-9.7,z-2.5);
+    glVertex3f(x-2.5,y-9.7,z+2.5);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(179/255.f,74/255.f,9/255.f);
+    glVertex3f(x+4,y,z+4);
+    glVertex3f(x+4,y,z-4);
+    glVertex3f(x+2.5,y-9.7,z-2.5);
+    glVertex3f(x+2.5,y-9.7,z+2.5);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(48/255.f,30/255.f,10/255.f);
+    glVertex3f(x-3.5,y-3.0,z-3.5);
+    glVertex3f(x+3.5,y-3.0,z-3.5);
+    glVertex3f(x+3.5,y-3.0,z+3.5);
+    glVertex3f(x-3.5,y-3.0,z+3.5);
+    glEnd();
+
+    tabung(x, y-2, z, 0.5, 1, 0.5, 82, 54, 18, 1);
+
+    glBegin(GL_TRIANGLES);
+    glColor3f(17/255.f,84/255.f,19/255.f);
+    glVertex3f(x-5,y+3.5,z+2);
+    glVertex3f(x,y+25,z+2);
+    glVertex3f(x+5,y+3.5,z+2);
+
+    glVertex3f(x-5,y+3.5,z-2);
+    glVertex3f(x,y+25,z-2);
+    glVertex3f(x+5,y+3.5,z-2);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(17/255.f,84/255.f,19/255.f);
+    glVertex3f(x-5,y+3.5,z-2);
+    glVertex3f(x-5,y+3.5,z+2);
+    glVertex3f(x+5,y+3.5,z+2);
+    glVertex3f(x+5,y+3.5,z-2);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(17/255.f,84/255.f,19/255.f);
+    glVertex3f(x-5,y+3.5,z-2);
+    glVertex3f(x-5,y+3.5,z+2);
+    glVertex3f(x,y+25,z+2);
+    glVertex3f(x,y+25,z-2);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(17/255.f,84/255.f,19/255.f);
+    glVertex3f(x+5,y+3.5,z-2);
+    glVertex3f(x+5,y+3.5,z+2);
+    glVertex3f(x,y+25,z+2);
+    glVertex3f(x,y+25,z-2);
+    glEnd();
+
+    glPushMatrix();
+    glColor3f(209/255.f,34/255.f,10/255.f);
+    glTranslatef(x+3,y+3,z);
+    glutSolidSphere(1.5,10,10);
+    glPopMatrix();
+
+    glPushMatrix();
+    glColor3f(209/255.f,34/255.f,10/255.f);
+    glTranslatef(x-3,y+3,z);
+    glutSolidSphere(1.5,10,10);
+    glPopMatrix();
+
+    glPopMatrix();
+}
+
 void tampil(void){
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -2821,6 +2916,13 @@ void tampil(void){
 
     //BANGKU BELAKANG
     bangkuBelakang(-80,-130,-44,-52);
+    
+    //POT
+    pot(-115,-40, 45);
+    pot(-140,-40,-50);
+    pot(-65,-40,-45);
+    pot(115,0, 40);
+    pot(125,0,-40);
 
 
     glPopMatrix();
