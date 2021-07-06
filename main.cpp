@@ -405,6 +405,395 @@ void tampil(void){
             glVertex3f(-140+(i*40),-30,58);
         glEnd();
     }
+    //pagar lantai 2 1
+    glColor4f(215/255.f, 255/255.f, 253/255.f, 0.3);
+    glBegin(GL_QUADS); // kaca
+        glVertex3f(209,-10,10);
+        glVertex3f(160,-10,10);
+        glVertex3f(160,0,10);
+        glVertex3f(209,0,10);
+    glEnd();
+    glColor3f(228/255.f, 228/255.f, 228/255.f);
+    glBegin(GL_QUADS); // tiang pagar
+        glVertex3f(159,-10,10);
+        glVertex3f(160,-10,10);
+        glVertex3f(160,0,10);
+        glVertex3f(159,0,10);
+        glVertex3f(210,-10,10);
+        glVertex3f(209,-10,10);
+        glVertex3f(209,0,10);
+        glVertex3f(210,0,10);
+    glEnd();
+
+    //pagar lantai 2 2
+    glColor4f(215/255.f, 255/255.f, 253/255.f, 0.3);
+    glBegin(GL_QUADS); // kaca
+        glVertex3f(160,-10,10);
+        glVertex3f(100,-10,30);
+        glVertex3f(100,0,30);
+        glVertex3f(160,0,10);
+        glVertex3f(90,0,30);
+        glVertex3f(90,-10,30);
+        glVertex3f(100,-10,30);
+        glVertex3f(100,0,30);
+    glEnd();
+    glColor3f(228/255.f, 228/255.f, 228/255.f);
+    glBegin(GL_QUADS); // tiang pagar
+        glVertex3f(90,-10,30);
+        glVertex3f(89,-10,30);
+        glVertex3f(89,0,30);
+        glVertex3f(90,0,30);
+    glEnd();
+
+    //pagar lantai 2 3
+    glColor4f(215/255.f, 255/255.f, 253/255.f, 0.3);
+    glBegin(GL_QUADS); // kaca
+        glVertex3f(89,-10,30);
+        glVertex3f(10,-10,10);
+        glVertex3f(10,0,10);
+        glVertex3f(89,0,30);
+    glEnd();
+    glColor3f(228/255.f, 228/255.f, 228/255.f);
+    glBegin(GL_QUADS); // tiang pagar
+        glVertex3f(10,-10,10);
+        glVertex3f(9,-10,10);
+        glVertex3f(9,0,10);
+        glVertex3f(10,0,10);
+    glEnd();
+
+    //pagar lantai 2 4
+    glColor4f(215/255.f, 255/255.f, 253/255.f, 0.3);
+    glBegin(GL_QUADS); // kaca
+        glVertex3f(9,-10,10);
+        glVertex3f(-100,-10,30);
+        glVertex3f(-100,0,30);
+        glVertex3f(9,0,10);
+    glEnd();
+    glColor3f(228/255.f, 228/255.f, 228/255.f);
+    glBegin(GL_QUADS); // tiang pagar
+        glVertex3f(-100,-10,30);
+        glVertex3f(-101,-10,30);
+        glVertex3f(-101,0,30);
+        glVertex3f(-100,0,30);
+    glEnd();
+
+    //pagar lantai 2 5
+    glColor4f(215/255.f, 255/255.f, 253/255.f, 0.3);
+    glBegin(GL_QUADS); // kaca
+        glVertex3f(-101,-10,30);
+        glVertex3f(-160,-10,20);
+        glVertex3f(-160,0,20);
+        glVertex3f(-101,0,30);
+        glVertex3f(-160,-10,20);
+        glVertex3f(-160,0,20);
+        glVertex3f(-189,0,20);
+        glVertex3f(-189,-10,20);
+    glEnd();
+    glColor3f(228/255.f, 228/255.f, 228/255.f);
+    glBegin(GL_QUADS); // tiang pagar
+        glVertex3f(-189,-10,20);
+        glVertex3f(-190,-10,20);
+        glVertex3f(-190,0,20);
+        glVertex3f(-189,0,20);
+    glEnd();
+
+    //pagar lantai 2 6,7
+    glColor4f(215/255.f, 255/255.f, 253/255.f, 0.3);
+    glBegin(GL_QUADS); // kaca
+        glVertex3f(-190,-10,20);
+        glVertex3f(-190,-10,-20);
+        glVertex3f(-190,0,-20);
+        glVertex3f(-190,0,20);
+    glEnd();
+    glColor3f(228/255.f, 228/255.f, 228/255.f);
+    glBegin(GL_QUADS); // tiang pagar
+        glVertex3f(-189,-10,-20);
+        glVertex3f(-190,-10,-20);
+        glVertex3f(-190,0,-20);
+        glVertex3f(-189,0,-20);
+
+    //pagar lantai 2 8
+    glColor4f(215/255.f, 255/255.f, 253/255.f, 0.3);
+    glBegin(GL_QUADS); // kaca
+        glVertex3f(-189,-10,-20);
+        glVertex3f(-140,-10,-20);
+        glVertex3f(-140,0,-20);
+        glVertex3f(-189,0,-20);
+        glVertex3f(-140,-10,-20);
+        glVertex3f(-115,-10,-25);
+        glVertex3f(-115,0,-25);
+        glVertex3f(-140,0,-20);
+        glVertex3f(-114,-10,-25);
+        glVertex3f(-50,-10,-30);
+        glVertex3f(-50,0,-30);
+        glVertex3f(-114,0,-25);
+    glEnd();
+    glColor3f(228/255.f, 228/255.f, 228/255.f);
+    glBegin(GL_QUADS); // tiang pagar
+        glVertex3f(-50,-10,-30);
+        glVertex3f(-49,-10,-30);
+        glVertex3f(-49,0,-30);
+        glVertex3f(-50,0,-30);
+        glVertex3f(-140,-10,-20);
+        glVertex3f(-139,-10,-20);
+        glVertex3f(-139,0,-20);
+        glVertex3f(-140,0,-20);
+        glVertex3f(-115,-10,-25);
+        glVertex3f(-114,-10,-25);
+        glVertex3f(-114,0,-25);
+        glVertex3f(-115,0,-25);
+    glEnd();
+
+    //pagar lantai 2 9
+    glColor4f(215/255.f, 255/255.f, 253/255.f, 0.3);
+    glBegin(GL_QUADS); // kaca
+        glVertex3f(-49,-10,-30);
+        glVertex3f(10,-10,-10);
+        glVertex3f(10,0,-10);
+        glVertex3f(-49,0,-30);
+        glVertex3f(10,-10,-10);
+        glVertex3f(75,-10,-25);
+        glVertex3f(75,0,-25);
+        glVertex3f(10,0,-10);
+        glVertex3f(75,-10,-25);
+        glVertex3f(119,-10,-25);
+        glVertex3f(119,0,-25);
+        glVertex3f(75,0,-25);
+    glEnd();
+    glColor3f(228/255.f, 228/255.f, 228/255.f);
+    glBegin(GL_QUADS); // tiang pagar
+        glVertex3f(10,-10,-10);
+        glVertex3f(9,-10,-10);
+        glVertex3f(9,0,-10);
+        glVertex3f(10,0,-10);
+        glVertex3f(75,-10,-25);
+        glVertex3f(76,-10,-25);
+        glVertex3f(76,0,-25);
+        glVertex3f(75,0,-25);
+        glVertex3f(119,-10,-25);
+        glVertex3f(120,-10,-25);
+        glVertex3f(120,0,-25);
+        glVertex3f(119,0,-25);
+    glEnd();
+
+    //pagar lantai 2 10
+    glColor4f(215/255.f, 255/255.f, 253/255.f, 0.3);
+    glBegin(GL_QUADS); // kaca
+        glVertex3f(120,-10,-25);
+        glVertex3f(170,-10,-10);
+        glVertex3f(170,0,-10);
+        glVertex3f(120,0,-25);
+        glVertex3f(170,-10,-10);
+        glVertex3f(199,-10,-10);
+        glVertex3f(199,0,-10);
+        glVertex3f(170,0,-10);
+    glEnd();
+    glColor3f(228/255.f, 228/255.f, 228/255.f);
+    glBegin(GL_QUADS); // tiang pagar
+        glVertex3f(170,-10,-10);
+        glVertex3f(171,-10,-10);
+        glVertex3f(171,0,-10);
+        glVertex3f(170,0,-10);
+        glVertex3f(199,-10,-10);
+        glVertex3f(200,-10,-10);
+        glVertex3f(200,0,-10);
+        glVertex3f(199,0,-10);
+    glEnd();
+
+//pagar lantai 3 1
+    glColor4f(215/255.f, 255/255.f, 253/255.f, 0.3);
+    glBegin(GL_QUADS); // kaca
+        glVertex3f(209,30,10);
+        glVertex3f(160,30,10);
+        glVertex3f(160,40,10);
+        glVertex3f(209,40,10);
+    glEnd();
+    glColor3f(228/255.f, 228/255.f, 228/255.f);
+    glBegin(GL_QUADS); // tiang pagar
+        glVertex3f(159,30,10);
+        glVertex3f(160,30,10);
+        glVertex3f(160,40,10);
+        glVertex3f(159,40,10);
+        glVertex3f(210,30,10);
+        glVertex3f(209,30,10);
+        glVertex3f(209,40,10);
+        glVertex3f(210,40,10);
+    glEnd();
+
+    //pagar lantai 3 2
+    glColor4f(215/255.f, 255/255.f, 253/255.f, 0.3);
+    glBegin(GL_QUADS); // kaca
+        glVertex3f(160,30,10);
+        glVertex3f(100,30,30);
+        glVertex3f(100,40,30);
+        glVertex3f(160,40,10);
+        glVertex3f(90,40,30);
+        glVertex3f(90,30,30);
+        glVertex3f(100,30,30);
+        glVertex3f(100,40,30);
+    glEnd();
+    glColor3f(228/255.f, 228/255.f, 228/255.f);
+    glBegin(GL_QUADS); // tiang pagar
+        glVertex3f(90,30,30);
+        glVertex3f(89,30,30);
+        glVertex3f(89,40,30);
+        glVertex3f(90,40,30);
+    glEnd();
+
+    //pagar lantai 3 3
+    glColor4f(215/255.f, 255/255.f, 253/255.f, 0.3);
+    glBegin(GL_QUADS); // kaca
+        glVertex3f(89,30,30);
+        glVertex3f(10,30,10);
+        glVertex3f(10,40,10);
+        glVertex3f(89,40,30);
+    glEnd();
+    glColor3f(228/255.f, 228/255.f, 228/255.f);
+    glBegin(GL_QUADS); // tiang pagar
+        glVertex3f(10,30,10);
+        glVertex3f(9,30,10);
+        glVertex3f(9,40,10);
+        glVertex3f(10,40,10);
+    glEnd();
+
+    //pagar lantai 3 4
+    glColor4f(215/255.f, 255/255.f, 253/255.f, 0.3);
+    glBegin(GL_QUADS); // kaca
+        glVertex3f(9,30,10);
+        glVertex3f(-100,30,30);
+        glVertex3f(-100,40,30);
+        glVertex3f(9,40,10);
+    glEnd();
+    glColor3f(228/255.f, 228/255.f, 228/255.f);
+    glBegin(GL_QUADS); // tiang pagar
+        glVertex3f(-100,30,30);
+        glVertex3f(-101,30,30);
+        glVertex3f(-101,40,30);
+        glVertex3f(-100,40,30);
+    glEnd();
+
+    //pagar lantai 3 5
+    glColor4f(215/255.f, 255/255.f, 253/255.f, 0.3);
+    glBegin(GL_QUADS); // kaca
+        glVertex3f(-101,30,30);
+        glVertex3f(-160,30,20);
+        glVertex3f(-160,40,20);
+        glVertex3f(-101,40,30);
+        glVertex3f(-160,30,20);
+        glVertex3f(-160,40,20);
+        glVertex3f(-189,40,20);
+        glVertex3f(-189,30,20);
+    glEnd();
+    glColor3f(228/255.f, 228/255.f, 228/255.f);
+    glBegin(GL_QUADS); // tiang pagar
+        glVertex3f(-189,30,20);
+        glVertex3f(-190,30,20);
+        glVertex3f(-190,40,20);
+        glVertex3f(-189,40,20);
+    glEnd();
+
+    //pagar lantai 3 6,7
+    glColor4f(215/255.f, 255/255.f, 253/255.f, 0.3);
+    glBegin(GL_QUADS); // kaca
+        glVertex3f(-190,30,20);
+        glVertex3f(-190,30,-20);
+        glVertex3f(-190,40,-20);
+        glVertex3f(-190,40,20);
+    glEnd();
+    glColor3f(228/255.f, 228/255.f, 228/255.f);
+    glBegin(GL_QUADS); // tiang pagar
+        glVertex3f(-189,30,-20);
+        glVertex3f(-190,30,-20);
+        glVertex3f(-190,40,-20);
+        glVertex3f(-189,40,-20);
+
+    //pagar lantai 3 8
+    glColor4f(215/255.f, 255/255.f, 253/255.f, 0.3);
+    glBegin(GL_QUADS); // kaca
+        glVertex3f(-189,30,-20);
+        glVertex3f(-140,30,-20);
+        glVertex3f(-140,40,-20);
+        glVertex3f(-189,40,-20);
+        glVertex3f(-140,30,-20);
+        glVertex3f(-115,30,-25);
+        glVertex3f(-115,40,-25);
+        glVertex3f(-140,40,-20);
+        glVertex3f(-114,30,-25);
+        glVertex3f(-50,30,-30);
+        glVertex3f(-50,40,-30);
+        glVertex3f(-114,40,-25);
+    glEnd();
+    glColor3f(228/255.f, 228/255.f, 228/255.f);
+    glBegin(GL_QUADS); // tiang pagar
+        glVertex3f(-50,30,-30);
+        glVertex3f(-49,30,-30);
+        glVertex3f(-49,40,-30);
+        glVertex3f(-50,40,-30);
+        glVertex3f(-140,30,-20);
+        glVertex3f(-139,30,-20);
+        glVertex3f(-139,40,-20);
+        glVertex3f(-140,40,-20);
+        glVertex3f(-115,30,-25);
+        glVertex3f(-114,30,-25);
+        glVertex3f(-114,40,-25);
+        glVertex3f(-115,40,-25);
+    glEnd();
+
+    //pagar lantai 3 9
+    glColor4f(215/255.f, 255/255.f, 253/255.f, 0.3);
+    glBegin(GL_QUADS); // kaca
+        glVertex3f(-49,30,-30);
+        glVertex3f(10,30,-10);
+        glVertex3f(10,40,-10);
+        glVertex3f(-49,40,-30);
+        glVertex3f(10,30,-10);
+        glVertex3f(75,30,-25);
+        glVertex3f(75,40,-25);
+        glVertex3f(10,40,-10);
+        glVertex3f(75,30,-25);
+        glVertex3f(119,30,-25);
+        glVertex3f(119,40,-25);
+        glVertex3f(75,40,-25);
+    glEnd();
+    glColor3f(228/255.f, 228/255.f, 228/255.f);
+    glBegin(GL_QUADS); // tiang pagar
+        glVertex3f(10,30,-10);
+        glVertex3f(9,30,-10);
+        glVertex3f(9,40,-10);
+        glVertex3f(10,40,-10);
+        glVertex3f(75,30,-25);
+        glVertex3f(76,30,-25);
+        glVertex3f(76,40,-25);
+        glVertex3f(75,40,-25);
+        glVertex3f(119,30,-25);
+        glVertex3f(120,30,-25);
+        glVertex3f(120,40,-25);
+        glVertex3f(119,40,-25);
+    glEnd();
+
+    //pagar lantai 3 10
+    glColor4f(215/255.f, 255/255.f, 253/255.f, 0.3);
+    glBegin(GL_QUADS); // kaca
+        glVertex3f(120,30,-25);
+        glVertex3f(170,30,-10);
+        glVertex3f(170,40,-10);
+        glVertex3f(120,40,-25);
+        glVertex3f(170,30,-10);
+        glVertex3f(199,30,-10);
+        glVertex3f(199,40,-10);
+        glVertex3f(170,40,-10);
+    glEnd();
+    glColor3f(228/255.f, 228/255.f, 228/255.f);
+    glBegin(GL_QUADS); // tiang pagar
+        glVertex3f(170,30,-10);
+        glVertex3f(171,30,-10);
+        glVertex3f(171,40,-10);
+        glVertex3f(170,40,-10);
+        glVertex3f(199,30,-10);
+        glVertex3f(200,30,-10);
+        glVertex3f(200,40,-10);
+        glVertex3f(199,40,-10);
+    glEnd();
 
     glPopMatrix();
     glutSwapBuffers();
