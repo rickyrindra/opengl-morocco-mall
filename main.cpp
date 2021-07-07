@@ -24,14 +24,20 @@ int is_depth;
 
 // variabel untuk animasi
 float y_pos = 0.0f;
+float x_pos = 0.0f;
+float x_awan = 0.0f;
 float x_pintu_kanan = 0.0f;
 float x_pintu_kiri = 0.0f;
 
 // delta : perubahan per frame
 float delta = 0.5f;
 float delta_pintu = 0.2f;
+float delta_mobil = 3.0f;
+float delta_awan = 1.5f;
 
 bool is_naik = true;
+bool is_kiri = true;
+bool is_kanan = true;
 bool is_pintu_buka = true;
 
 void timer(int){
@@ -44,6 +50,19 @@ void timer(int){
 
     if (y_pos > 0 && !is_naik) y_pos-=delta;
     else is_naik = true;
+    
+    // mobil
+    if (x_pos > -550 && is_kiri) x_pos-=delta_mobil;
+    else is_kiri = false;
+
+    if (!is_kiri) x_pos=0.0f; is_kiri=true;
+    
+    // awan
+    if(x_awan < 160 && is_kanan) x_awan+=delta_awan;
+    else is_kanan = false;
+
+    if(x_awan > -160 && !is_kanan) x_awan-=delta_awan;
+    else is_kanan=true;
 
     // pintu kanan
     if(x_pintu_kanan < 10 && is_pintu_buka) x_pintu_kanan +=delta_pintu;
@@ -102,6 +121,22 @@ void init(void){
     glLineWidth(6.0);
 
     glMatrixMode(GL_MODELVIEW);
+}
+
+void awan(float x1,float x2, float y1, float y2, float z){
+    float batas = x1+20;
+    for(float i = x1; i<=batas;i+=10){
+        glPushMatrix();
+            glColor3f(1.0,1.0,1.0);
+            glTranslated(i,y1,z);
+            glutSolidSphere(10,20,20);
+        glPopMatrix();
+    }
+    glPushMatrix();
+        glColor3f(1.0,1.0,1.0);
+        glTranslated(x2,y2,z);
+        glutSolidSphere(10,20,20);
+    glPopMatrix();
 }
 
 void eskalator(float aDasar, float bDasar,float tinggiDasar,float aTegak,float bTegak,
@@ -191,6 +226,190 @@ void eskalator(float aDasar, float bDasar,float tinggiDasar,float aTegak,float b
         bCover-=5;
         yCover+=5;
     }
+}
+
+void lingkaran(float x, float y,float z,float r){
+    float theta;
+    for(int i = 0; i < 360; i++){
+        theta = i* 3.14285714/180;
+        glVertex3f(x+r*cos(theta), y+r*sin(theta),z);
+    }
+}
+
+void mobil(float x1, float x2){
+            //MOBIL
+            //BODY SAMPING DEKET
+            glColor3f(232/255.f,21/255.f,21/255.f);
+            glBegin(GL_QUADS);
+                glVertex3f(x1,-43,133);
+                glVertex3f(x2,-43,133);
+                glVertex3f(x2,-33,133);
+                glVertex3f(x1,-33,133);
+            glEnd();
+
+            //BODY SAMPING JAUH
+            glColor3f(134/255.f,3/255.f,3/255.f);
+            glBegin(GL_QUADS);
+                glVertex3f(x1,-43,123);
+                glVertex3f(x2,-43,123);
+                glVertex3f(x2,-33,123);
+                glVertex3f(x1,-33,123);
+            glEnd();
+
+            //BODY DEPAN
+            glColor3f(186/255.f,14/255.f,14/255.f);
+            glBegin(GL_QUADS);
+                glVertex3f(x1,-33,133);
+                glVertex3f(x1,-43,133);
+                glVertex3f(x1,-43,123);
+                glVertex3f(x1,-33,123);
+            glEnd();
+
+            //BODY BELAKANG
+            glColor3f(186/255.f,14/255.f,14/255.f);
+            glBegin(GL_QUADS);
+                glVertex3f(x2,-33,133);
+                glVertex3f(x2,-43,133);
+                glVertex3f(x2,-43,123);
+                glVertex3f(x2,-33,123);
+            glEnd();
+
+            //BODY ATAS
+            glColor3f(232/255.f,21/255.f,21/255.f);
+            glBegin(GL_QUADS);
+                glVertex3f(x1+15.0,-23,133);
+                glVertex3f(x2-8.0,-23,133);
+                glVertex3f(x2-8.0,-23,123);
+                glVertex3f(x1+15.0,-23,123);
+            glEnd();
+
+            //KAP MOBIL DEPAN
+            glColor3f(186/255.f,14/255.f,14/255.f);
+            glBegin(GL_QUADS);
+                glVertex3f(x1,-33,133);
+                glVertex3f(x1+7,-33,133);
+                glVertex3f(x1+7,-33,123);
+                glVertex3f(x1,-33,123);
+            glEnd();
+
+            //BODY KACA DEPAN
+            glColor3f(232/255.f,21/255.f,21/255.f);
+            glBegin(GL_QUADS);
+                glVertex3f(x1+7,-33,133);
+                glVertex3f(x1+15,-23,133);
+                glVertex3f(x1+15,-23,123);
+                glVertex3f(x1+7,-33,123);
+            glEnd();
+
+            //KACA BELAKANG
+            glBegin(GL_QUADS);
+            glColor3f(134/255.f,232/255.f,238/255.f);
+                glVertex3f(x2-8,-23,133);
+                glVertex3f(x2-8,-23,123);
+                glColor3f(255/255.f,255/255.f,255/255.f);
+                glVertex3f(x2,-33,123);
+                glVertex3f(x2,-33,133);
+
+
+            glEnd();
+
+            //BODY KACA SAMPING DEKET
+            glColor3f(232/255.f,21/255.f,21/255.f);
+            glBegin(GL_QUADS);
+                glVertex3f(x1+7,-33,133);
+                glVertex3f(x2,-33,133);
+                glVertex3f(x2-8,-23,133);
+                glVertex3f(x1+15,-23,133);
+            glEnd();
+
+            //BODY KACA SAMPING JAUH
+            glColor3f(134/255.f,3/255.f,3/255.f);
+            glBegin(GL_QUADS);
+                glVertex3f(x1+7,-33,123);
+                glVertex3f(x2,-33,123);
+                glVertex3f(x2-8,-23,123);
+                glVertex3f(x1+15,-23,123);
+            glEnd();
+
+            //KACA DEPAN
+            glBegin(GL_QUADS);
+                glColor3f(134/255.f,232/255.f,238/255.f);
+                glVertex3f(x1+14,-24,132.5);
+                glVertex3f(x1+14,-24,123.5);
+                glColor3f(255/255.f,255/255.f,255/255.f);
+                glVertex3f(x1+7.5,-32,123.5);
+                glVertex3f(x1+7.5,-32,132.5);
+            glEnd();
+
+            //KACA SAMPING DEKET
+            glColor3f(232/255.f,21/255.f,21/255.f);
+            glBegin(GL_QUADS);
+                glColor3f(255/255.f,255/255.f,255/255.f);
+                glVertex3f(x1+8,-32.5,133.1);
+                glVertex3f(x2-1,-32.5,133.1);
+                glColor3f(134/255.f,232/255.f,238/255.f);
+                glVertex3f(x2-9,-23.5,133.1);
+                glVertex3f(x1+16,-23.5,133.1);
+            glEnd();
+
+            //KACA SAMPING JAUH
+            glColor3f(232/255.f,21/255.f,21/255.f);
+            glBegin(GL_QUADS);
+                glColor3f(255/255.f,255/255.f,255/255.f);
+                glVertex3f(x1+8,-32.5,122.9);
+                glVertex3f(x2-1,-32.5,122.9);
+                glColor3f(134/255.f,232/255.f,238/255.f);
+                glVertex3f(x2-9,-23.5,122.9);
+                glVertex3f(x1+16,-23.5,122.9);
+            glEnd();
+
+            //BAN DEPAN DEKET
+            glColor3f(14/255.f,13/255.f,13/255.f);
+            glBegin(GL_POLYGON);
+                lingkaran(x1+8,-44,133.1,5);
+            glEnd();
+
+            //BAN BELAKANG DEKET
+            glColor3f(14/255.f,13/255.f,13/255.f);
+            glBegin(GL_POLYGON);
+                lingkaran(x2-8,-44,133.1,5);
+            glEnd();
+
+            //BAN DEPAN JAUH
+            glColor3f(14/255.f,13/255.f,13/255.f);
+            glBegin(GL_POLYGON);
+                lingkaran(x1+8,-44,122.9,5);
+            glEnd();
+
+            //BAN BELAKANG JAUH
+            glColor3f(14/255.f,13/255.f,13/255.f);
+            glBegin(GL_POLYGON);
+                lingkaran(x2-8,-44,122.9,5);
+            glEnd();
+
+            //BAN KECIL DEPAN DEKET
+            glColor3f(134/255.f,125/255.f,125/255.f);
+            glBegin(GL_POLYGON);
+                lingkaran(x1+8,-44,133.2,3);
+            glEnd();
+
+            //BAN KECIL BELAKANG DEKET
+            glColor3f(134/255.f,125/255.f,125/255.f);
+            glBegin(GL_POLYGON);
+                lingkaran(x2-8,-44,133.2,3);
+            glEnd();
+
+            //BAN KECIL DEPAN JAUH
+            glColor3f(134/255.f,125/255.f,125/255.f);
+            glBegin(GL_POLYGON);
+                lingkaran(x1+8,-44,122.8,3);
+            glEnd();
+
+            //BAN KECIL BELAKANG JAUH
+            glColor3f(134/255.f,125/255.f,125/255.f);
+            glBegin(GL_POLYGON);
+                lingkaran(x2-8,-44,122.8,3);
+            glEnd();
 }
 
 void tabung(float x, float y, float z, float scale_x, float scale_y, float scale_z, float color1, float color2, float color3, float alpha)
@@ -3927,6 +4146,23 @@ void tampil(void){
         bLampu+=70;
     }
 
+    //MOBIL
+    glPushMatrix();
+        glTranslatef(x_pos,0,0);
+        mobil(228,270);
+    glPopMatrix();
+
+    //AWAN
+    glPushMatrix();
+        glTranslatef(x_awan,0,0);
+        awan(90,100,110,120,-60);
+        awan(-170,-160,130,140,-90);
+        awan(0,10,150,160,-80);
+        awan(-10,0,140,150,80);
+        awan(-200,-190,120,130,50);
+        awan(150,160,140,150,0);
+    glPopMatrix();
+    
     //BANGJO
     //ALAS SISI HADEP DEPAN
     glBegin(GL_QUADS);
