@@ -50,13 +50,13 @@ void timer(int){
 
     if (y_pos > 0 && !is_naik) y_pos-=delta;
     else is_naik = true;
-    
+
     // mobil
     if (x_pos > -550 && is_kiri) x_pos-=delta_mobil;
     else is_kiri = false;
 
     if (!is_kiri) x_pos=0.0f; is_kiri=true;
-    
+
     // awan
     if(x_awan < 160 && is_kanan) x_awan+=delta_awan;
     else is_kanan = false;
@@ -4162,7 +4162,7 @@ void tampil(void){
         awan(-200,-190,120,130,50);
         awan(150,160,140,150,0);
     glPopMatrix();
-    
+
     //BANGJO
     //ALAS SISI HADEP DEPAN
     glBegin(GL_QUADS);
@@ -4311,7 +4311,7 @@ void tampil(void){
     glVertex3f(-319,13,125);
     glVertex3f(-316,13,125);
     glEnd();
-    
+
     //sofa lantai 2
     //pinggir kiri
     glBegin(GL_QUADS);
@@ -4385,7 +4385,7 @@ void tampil(void){
     glEnd();
 
 
-//sofa lantai 3
+    //sofa lantai 3
     //pinggir kiri
     glBegin(GL_QUADS);
     glColor3ub(0,9,41);
@@ -4492,10 +4492,53 @@ void tampil(void){
     pohon(-245,-49.7,-110);
     pot2(225,-40,-20);
     pot2(225,-40,20);
-    
+
     //VENDING MACHINE
     vending_depan();
     vending_belakang();
+
+    // AC
+    for(int i=0; i<4; i++){
+        for(int j=0; j<3; j++){
+            glColor3f(0.95,0.95,0.95);
+            glBegin(GL_QUADS); // belakang
+                glVertex3f(-270+(i*20),70,-40+(j*25));
+                glVertex3f(-260+(i*20),70,-40+(j*25));
+                glVertex3f(-260+(i*20),77,-40+(j*25));
+                glVertex3f(-270+(i*20),77,-40+(j*25));
+            glEnd();
+            glBegin(GL_QUADS); // depan
+                glVertex3f(-270+(i*20),70,-35+(j*25));
+                glVertex3f(-260+(i*20),70,-35+(j*25));
+                glVertex3f(-260+(i*20),77,-35+(j*25));
+                glVertex3f(-270+(i*20),77,-35+(j*25));
+            glEnd(); // kanan
+            glColor3f(0.9,0.9,0.9);
+            glBegin(GL_QUADS);
+                glVertex3f(-270+(i*20),70,-40+(j*25));
+                glVertex3f(-270+(i*20),70,-35+(j*25));
+                glVertex3f(-270+(i*20),77,-35+(j*25));
+                glVertex3f(-270+(i*20),77,-40+(j*25));
+            glEnd(); // kiri
+            glColor3f(0.98,0.98,0.98);
+            glBegin(GL_QUADS);
+                glVertex3f(-260+(i*20),70,-40+(j*25));
+                glVertex3f(-260+(i*20),70,-35+(j*25));
+                glVertex3f(-260+(i*20),77,-35+(j*25));
+                glVertex3f(-260+(i*20),77,-40+(j*25));
+            glEnd();// atas
+            glBegin(GL_QUADS);
+                glVertex3f(-260+(i*20),77,-40+(j*25));
+                glVertex3f(-270+(i*20),77,-40+(j*25));
+                glVertex3f(-270+(i*20),77,-35+(j*25));
+                glVertex3f(-260+(i*20),77,-35+(j*25));
+            glEnd();
+            glColor3f(0.6,0.6,0.6);
+            glBegin(GL_POLYGON);
+                lingkaran(-263+(i*20),73.5,-34.9+(j*25),2);
+            glEnd();
+        }
+    }
 
     glPopMatrix();
     glutSwapBuffers();

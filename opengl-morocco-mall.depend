@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1625583459 source:d:\nugas\tahun 2\semester 3\grafika komputer\coding\opengl-morocco-mall\main.cpp
+1625584553 source:d:\nugas\tahun 2\semester 3\grafika komputer\coding\opengl-morocco-mall\main.cpp
 	<windows.h>
 	<stdlib.h>
 	<gl/glut.h>
